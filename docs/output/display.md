@@ -1,199 +1,667 @@
+---
+title: Display
+---
 # Display
-## Встроенные методы
+Singleton — always returns the same instance
 
-### `.sleep_mode(bool)`
+---
+## Basic usage
 
-`bool` принимает значения False и True
+---
+### `Display()`
+To create Display object call `Display()`.
 
-Если `True` экран выключается и ничего не показывает Если `False` экран включается, показывая всё что было до этого (учитывая команды написанные во время “сна”)
+```python
+from pibody import Display
 
+display = Display()
+```
+
+Also you can call direct object from library.
+
+```python
+from pibody import display
+```
+
+---
+### `.print(*args)`
+Print *args* to a scrolling on-screen console.
+
+Arguments are joined with spaces and prefixed with ``">> "``.
+Long lines are wrapped to fit the display width.
+``\\n`` characters trigger explicit line breaks.
+
+**Args:**
+
+- `*args (Any)` - 
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `color (Display.Color)` - text foreground colour. Default is `Display.WHITE`
+
+```python
+display.print("Hello,", "World!")
+```
+
+---
+### `.text(text, x, y)`
+Write *text* at (x, y) using *font*.
+
+**Args:**
+
+- `text (str | int | bytes)` - parameter to print
+- `x (int)` - text column position
+- `y (int)` - text row position
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_small`
+- `fg (Display.Color)` - text foreground colour. Default is `Display.WHITE`
+- `bg (Display.Color)` - text background colour. Default is `Display.BLACK`
+
+```python
+display.text("Pibody", 50, 50, font = font_bold)
+```
+
+---
+### `.clear()`
+Clear the display and reset the scroll console state.
+
+```python
+display.clear()
+```
+
+---
+## Geometric shapes
+
+---
 ### `.fill(color)`
+Fill the entire display with *color*.
 
-Заполняет весь экран указанным цветом
+**Args:**
 
-`color` принимает десятеричное число с репрезентацией rgb c 16 битами (565) (00000 000000 00000)
+- `color (Display.Color)` - enter preset color, or input own
 
+```python
+display.fill(Display.WHITE)
+```
+
+---
 ### `.pixel(x, y, color)`
+Set a single pixel at (x, y) to *color*.
 
-Рисует пиксель в указанном месте с определенным цветом
+**Args:**
 
-`x`, `y` — координаты
+- `x (int)` - pixel column (0 = left edge)
+- `y (int)` - pixel row (0 = top edge)
+- `color (Display.Color)` - pixel colour
 
-`color` — цвет
+```python
+display.pixel(10, 10, Display.WHITE)
+```
 
+---
+### `.line(x0, y0, x1, y1, color)`
+Draw a line from (x0, y0) to (x1, y1) in *color*.
+
+**Args:**
+
+- `x0 (int)` - start column
+- `y0 (int)` - start row
+- `x1 (int)` - end column
+- `y1 (int)` - end row
+- `color (Display.Color)` - line colour
+
+```python
+display.line(10, 10, 20, 20, Display.BLUE)
+```
+
+---
 ### `.hline(x, y, length, color)`
+Draw a fast horizontal line of *length* pixels starting at (x, y).
 
-Рисует горизонтальную линию с указанной длиной
+**Args:**
 
+- `x (int)` - start column
+- `y (int)` - row position
+- `length (int)` - length of line in pixels
+- `color (Display.Color)` - line colour
+
+```python
+display.hline(10, 10, 15, Display.BLACK)
+```
+
+---
 ### `.vline(x, y, length, color)`
+Draw a fast vertical line of *length* pixels starting at (x, y).
 
-Рисует вертикальную линию с указанной длиной
+**Args:**
 
+- `x (int)` - column position
+- `y (int)` - start row
+- `length (int)` - length of line in pixels
+- `color (Display.Color)` - line colour
+
+```python
+display.vline(10, 10, 15, Display.BLACK)
+```
+
+---
+### `.crosshair(x, y, r, x_center, y_center, crosshair_radius)`
+Renders a ball at the center of crosshair.  
+x, y cords are relative and range from -1 to 1, where 0 is the middle of the crosshair.
+
+**Args:**
+
+- `x (float)` - relative X position (-1 = left, 0 = centre, 1 = right)
+- `y (float)` - relative Y position (-1 = bottom, 0 = centre, 1 = top)
+- `r (int)` - radius
+- `x_center (int)` - left-centre anchor point's X
+- `y_center (int)` - left-centre anchor point's Y
+- `crosshair_radius (int)` - inner radius in pixels
+- `color (Display.Color | None)` - primary color of crosshair. Default is `Display.RED`
+- `border_color (Display.Color | None)` - colour of the border. Default is `Display.WHITE`
+- `background_color (Display.Color | None)` - background color. Default is `Display.BLACK`
+
+```python
+display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
+```
+
+---
 ### `.rect(x, y, width, height, color)`
+Draw a rectangle outline with the top-left corner at (x, y).
 
-Рисует полый квадрат с указанными шириной и высотой, у которого левый верхний угол начинается на x, y
+**Args:**
 
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `width (int)` - rectangle width
+- `height (int)` - rectangle height
+- `color (Display.Color)` - colour of rectangle's border
+
+```python
+display.rect(50, 50, 10, 20, Display.GREEN)
+```
+
+---
 ### `.fill_rect(x, y, width, height, color)`
+Draw a filled rectangle with the top-left corner at (x, y).
 
-Рисует заполненный квадрат с указанными шириной и высотой, у которого левый верхний угол начинается на x, y
+**Args:**
 
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `width (int)` - rectangle width
+- `height (int)` - rectangle height
+- `color (Display.Color)` - color of full rectangle
+
+```python
+display.fill_rect(50, 50, 10, 20, Display.GREEN)
+```
+
+---
 ### `.circle(x, y, r, color)`
+Draw a circle outline centred at (x, y) with radius *r*.
 
-Рисует круг с радиусом `r`, центр которого находится на `x`, `y`
+**Args:**
 
+- `x (int)` - centre column
+- `y (int)` - centre row
+- `r (int)` - circle radius
+- `color (Display.Color)` - color of circle's border
+
+```python
+display.circle(50, 50, 10, Display.GREEN)
+```
+
+---
 ### `.fill_circle(x, y, r, color)`
+Draw a filled circle centred at (x, y) with radius *r*.
 
-Рисует заполненный круг с радиусом `r`, центр которого находится на `x`, `y`
+**Args:**
 
+- `x (int)` - centre column
+- `y (int)` - centre row
+- `r (int)` - circle radius
+- `color (Display.Color)` - fill color
+
+```python
+display.fill_circle(50, 50, 10, Display.GREEN)
+```
+
+---
+### `.arc(color, center_x, center_y, r)`
+Draw an arc (thick outline segment of a circle).
+
+**Args:**
+
+- `color (Display.Color)` - arc primary color
+- `center_x (int)` - centre point's X
+- `center_y (int)` - centre point's Y
+- `r (int)` - inner radius in pixels
+- `width (int | None)` -  = radial thickness in pixels. Default is `1`
+- `start_angle (int | None)` - start of arc in degrees. Default is `0`
+- `end_angle (int | None)` - end of arc in degrees. Default is `360`
+
+```python
+display.arc(display.WHITE, 50, 50, 20)
+```
+
+---
+## Polygon drawing
+
+---
+### `.draw_polygon(center_x, center_y, r, n)`
+Draw a regular *n*-sided polygon with optional mid-edge bulge.
+
+**Args:**
+
+- `center_x (int)` - left-centre anchor point's X
+- `center_y (int)` - left-centre anchor point's Y
+- `r (int)` - circumradius in pixels
+- `n (int)` - number of sides
+- `bump (float | None)` - mid-edge bulge factor relative to r (1.0 = flat). Default is `1.0`
+- `angle_offset (float | None)` - rotation offset in degrees; auto-computed if None. Default is `None`
+- `color (Display.Color | None)` - outline / fill colour. Default is `Display.WHITE`
+- `fill (bool | None)` - filled polygon if `True`, outline only if `False`. Default is `False`
+
+```python
+display.draw_polygon(50, 50, 20, 4, color = Display.GREEN)
+```
+
+---
+### `.polygon_center(polygon) -> (int, int)`
+Return the centroid ``(x, y)`` of a closed convex *polygon*.
+
+**Args:**
+
+- `polygon (list[tuple[int, int]])` - list of coordinates. [(0, 0), (10, 0), (10, 10), (0, 10)]
+
+```python
+poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
+
+center_x, center_y = display.polygon_center(poly)
+
+print(center_x, center_y)
+```
+
+---
+### `.polygon(polygon, x, y, color)`
+Draw a polygon outline translated to (x, y), optionally rotated *angle* radians about (center_x, center_y).
+
+**Args:**
+
+- `polygon (list[tuple[int, int]])` - list of coordinates. [(0, 0), (10, 0), (10, 10), (0, 10)]
+- `x (int)` - translation offset column
+- `y (int)` - translation offset row
+- `color (Display.Color)` - primary color of polygon
+- `angle (float)` - rotation angle. Default is `0.0`
+- `center_x (int)` - rotation pivot column. Default is `0`
+- `center_y (int)` - rotation pivot row. Default is `0`
+
+```python
+poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
+
+display.polygon(poly, 0, 0, Display.RED, angle = 45)
+```
+
+---
+### `.fill_polygon(polygon, x, y, color)`
+Draw a filled polygon translated to (x, y), optionally rotated *angle* radians about (center_x, center_y).
+
+**Args:**
+
+- `polygon (list[tuple[int, int]])` - list of coordinates. [(0, 0), (10, 0), (10, 10), (0, 10)]
+- `x (int)` - translation offset column
+- `y (int)` - translation offset row
+- `color (Display.Color)` - primary color of polygon
+- `angle (float)` - rotation angle. Default is `0.0`
+- `center_x (int)` - rotation pivot column. Default is `0`
+- `center_y (int)` - rotation pivot row. Default is `0`
+
+```python
+poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
+
+display.fill_polygon(poly, 0, 0, Display.RED, angle = 45)
+```
+
+---
+### `.bounding() -> (int, int, int, int)`
+Enable / disable dirty-rectangle tracking and query results.
+
+Passing True or False resets the tracked rectangle and enables / disables tracking respectively.
+
+Returns ``(min_x, min_y, max_x, max_y)`` or, if *as_rect* is True, ``(min_x, min_y, width, height)``.
+
+**Args:**
+
+- `status (bool | None)` - Default is `None`
+- `as_rect (bool | None)` - Default is `False`
+
+```python
+data = display.bounding()
+print(data)
+```
+
+---
+## Bitmap
+
+---
 ### `.blit_buffer(buffer, x, y, width, height)`
+Copy a raw RGB565 buffer to the display at (x, y).
 
-Copy bytes() or bytearray() content to the screen internal memory. Note: every color requires 2 bytes in the array
+*buffer* must contain ``width * height * 2`` bytes.
 
-### `.text(text, x, y[, font, fg, bg])` (Наша имплементация)
+**Args:**
 
-Пишет текст, у которого левый верхний угол начинается на x, y.
+- `buffer (bytes | bytearray)` - buffer
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `width (int)` - rectangle width
+- `height (int)` - rectangle height
 
-`fg` - цвет текста (по дефолту он белый)
+```python
+display.blit_buffer(buf, 50, 50, 60, 60)
+```
 
-`bg` - цвет фона (по дефолту он черный)
+---
+### `.bitmap(bitmap, x, y)`
+Draw a bitmap module (created by imgtobitmap.py or monofont2bitmap.py) at (x, y). Use *index* to select from multi-bitmap modules.
 
-`font` - шрифт (по дефолту он `font_small`)
+**Args:**
 
-### `.write(bitmap_font, s, x, y[, fg, bg, background_tuple, fill_flag])`
+- `bitmap (Any)` - bitmap
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `index (int | None)` - multi-bitmap index. Default is `0`
 
-Write text to the display using the specified proportional or Monospace bitmap font module with the coordinates as the upper-left corner of the text. The foreground and background colors of the text can be set by the optional arguments `fg` and `bg`, otherwise the foreground color defaults to `WHITE` and the background color defaults to `BLACK`.
+```python
+display.bitmap(bitmap, 0, 0)
+```
 
-Transparency can be emulated by providing a `background_tuple` containing (bitmap_buffer, width, height). This is the same format used by the jpg_decode method. See examples/T-DISPLAY/clock/clock.py for an example.
+---
+## Image
 
-See the `README.md` in the `truetype/fonts` directory for example fonts. Returns the width of the string as printed in pixels. Accepts UTF8 encoded strings.
+---
+### `.jpg(jpg, x, y)`
+Draw a JPEG at (x, y).
 
-The `font2bitmap` utility creates compatible 1 bit per pixel bitmap modules from Proportional or Monospaced True Type fonts. The character size, foreground, background colors, and characters in the bitmap module may be specified as parameters. Use the -h option for details. If you specify a buffer_size during the display initialization, it must be large enough to hold the widest character (HEIGHT * MAX_WIDTH * 2).
+**Args:**
 
-### `.write_len(bitap_font, s)`
+- `jpg (str | bytes | bytearray)` - may be a filename string or a buffer containing JPEG data
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `method (int)` - render method. Use ``st7789.SLOW`` for images that exceed available free RAM. Default is `Display.FAST`
 
-Returns the string's width in pixels if printed in the specified font.
+```python
+display.jpg("dog.jpg", 0, 0)
+```
 
-### ~~`.draw(vector_font, s, x, y[, fg, scale])`~~ (Использует векторные фонты)
+---
+### `.jpg_decode(jpg) -> (bytearray, int, int)`
+Decode a JPEG and return ``(buffer, width, height)``.
 
-Draw text to the display using the specified Hershey vector font with the coordinates as the lower-left corner of the text. The foreground color of the text can be set by the optional argument `fg`. Otherwise the foreground color defaults to `WHITE`. The size of the text can be scaled by specifying a `scale` value. The `scale` value must be larger than 0 and can be a floating-point or an integer value. The `scale` value defaults to 1.0. See the [README.md](http://README.md) in the `vector/fonts` directory, for example fonts and the utils directory for a font conversion program.
+**Args:**
 
-### `.jpg_decode(jpg_filename [, x, y, width, height])`
+- `jpg (str | bytes | bytearray)` - an RGB565 bytearray suitable for ``blit_buffer``
+- `x (int | None)` - crop start column. Default is `0`
+- `y (int | None)` - crop start row. Default is `0`
+- `width (int | None)` - width to crop the decoded image. Default is `None`
+- `height (int | None)` - height to crop the decoded image. Default is `None`
 
-Decode a jpg file and return it or a portion of it as a tuple composed of (buffer, width, height). The buffer is a color565 blit_buffer compatible byte array. The buffer will require width * height * 2 bytes of memory.
+```python
+display.jpg_decode("dog.jpg")
+```
 
-If the optional x, y, width, and height parameters are given, the buffer will only contain the specified area of the image. See examples/T-DISPLAY/clock/clock.py examples/T-DISPLAY/toasters_jpg/toasters_jpg.py for examples.
+---
+### `.png(png, x, y)`
+Draw a PNG file at (x, y). Transparency is not supported unless *mask* is True, in which case pixels with zero alpha are skipped (slower, drawn line-by-line).
 
-### `.png(png_filename, x, y [, mask])`
+**Args:**
 
-Draw a PNG file on the display with upper left corner of the image at the given `x` and `y` coordinates. The PNG will be clipped if it is not able to fit fully on the display. The PNG will be drawn one line at a time. Since the driver does not contain a frame buffer, transparency is not supported. Providing a `True` value for the `mask` parameter will prevent pixels with a zero alpha channel value from being displayed. Drawing masked PNG's is slower than non-masked as each visible line segment is drawn separately. For an example of using a mask, see the [alien.py](http://alien.py) program in the examples/png folder.
+- `png (str | bytes | bytearray)` - an RGB565 bytearray suitable for ``blit_buffer``
+- `x (int)` - top-left column
+- `y (int)` - top-left row
+- `mask (bool = False)` - transparency mode
 
-### `.polygon_center(polygon)`
+```python
+display.png("dog.jpg", 0, 0, mask = True)
+```
 
-Возвращает центр полигона в виде картежа (x, y)
+---
+## Text
 
-`polygon` - список координат вершин полигона в виде картежа (x, y)
+---
+### `.write(font, s, x, y) -> int`
+Write UTF-8 *s* using a proportional bitmap *font* at (x, y). *proportional / TrueType bitmap fonts*.
 
-### `.fill_polygon(polygon, x, y, color[, angle, center_x, center_y])`
+Returns the `width` of the rendered string in pixels.
 
-Рисует заполненный полигон `polygon` at the `x`, and `y` coordinates in the `color` given. The polygon may be rotated `angle` radians about the `center_x` and `center_y` point. The polygon should consist of a list of (x, y) tuples forming a closed convex polygon.
+**Args:**
 
-### …soon
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `s (str)` - text to be showed
+- `x (int)` - text column position
+- `y (int)` - text row position
 
-## Наши методы
+```python
+display.write(Display.font_medium, "Hello", 10, 10)
+```
 
-### `.text(text, x, y, font, fg, bg)` (Наша имплементация)
+---
+### `.write_len(font, s) -> int`
+Return the pixel length of *s* when rendered with *font*. *proportional / TrueType bitmap fonts*.
+
+**Args:**
+
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `s (str)` - text to be showed
+
+```python
+length = display.write_len(Display.font_medium, "PiBody")
+print(length)
+```
+
+---
+### `.draw(font, s, x, y)`
+Draw *s* using a Hershey vector *font* with (x, y) as the *lower-left* corner of the text. *scale* must be > 0. *Hershey vector fonts*.
 
-Пишет текст, у которого левый верхний угол начинается на x, y.
+**Args:**
 
-`fg` - цвет текста (по дефолту он белый)
-`bg` - цвет фона (по дефолту он черный)
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `s (str)` - text to be showed
+- `x (int)` - lower-left column
+- `y (int)` - lower-left row
+- `fg (Display.Color | None)` - text foreground colour. Default is `Display.WHITE`
+- `scale (float | None)` - scale. Default is `1.0`
 
-`font` - шрифт (по дефолту он `font_small`)
+```python
+display.draw(Display.font_medium, "PiBody", 15, 15)
+```
 
-### `.color(r, g, b)`
+---
+### `.draw_len(font, s)`
+Return the pixel length of *s* when drawn with *font* at *scale*. *Hershey vector fonts*.
 
-Возвращает кодировку цвета в 565 формате (ffff - белый цвет)
+**Args:**
 
-`r`, `g`, `b` - принимает значения от 0 до 255
+- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `s (str)` - text to be showed
+- `scale (float | None)` - scale. Default is `1.0`
 
-### `.draw_circle(color, center_x, center_y, r, [width, start_angle, end_angle])`
+```python
+length = display.draw_len(Display.font_medium, "PiBody", 15, 15)
+print(length)
+```
 
-Рисует круг с радиусом `r` и шириной `wigth` с центром в координатах `center_x`, `center_y`.
+---
+## Progress bar
 
-`start_angle` - принимает значение, с которого начинает рисоваться круг (по дефолту это 0)
+---
+### `.linear_bar(x, y, value, min_value, max_value)`
+Draw a horizontal progress bar centred vertically on *y*.
 
-`end_angle` _-_ принимает значение, с которого закончится рисоваться круг (по дефолту это 360)
+**Args:**
 
-`width` _-_ принимает значение, которое определяет ширину окружности (по дефолту это 1)
+- `x (int)` - left-centre anchor point's X
+- `y (int)` - left-centre anchor point's Y
+- `value (float)` - current value (clamped to min_value–max_value)
+- `min_value (float)` - value that corresponds to an empty bar
+- `max_value (float)` - value that corresponds to a full bar
+- `length (int | None)` - total bar length in pixels. Default is `100`
+- `height (int | None)` - bar height in pixels. Default is `5`
+- `border (bool | None)` - = if `True`, draw a rectangular border and flood the empty region; if `False`, draw end caps and a centre line instead. Default is `False`
+- `bar_color (Display.Color | None)` - colour of the filled portion. Default is `Display.GREEN`
+- `border_color (Display.Color | None)` - colour of the border / end caps / centre line. Default is `Display.WHITE`
+- `background_color (Display.Color | None)` - colour of the unfilled portion. Default is `Display.BLACK`
 
-### `.linear_bar(x, y, length, value, min_value, max_value, [height, border, color, border_color, background_color])`
+```python
+display.linear_bar(50, 50, 5, 0, 10)
+```
 
-Рисует квадратный индикатор прогресса на координатах `x`, `y`
+---
+### `.circular_bar(center_x, center_y, r, value, min_value, max_value)`
+Draw a circular progress bar.
 
-`length` - принимает значение, которое определяет длину прогресс бара
+The filled arc (from -90° to the computed angle) is drawn in *color*; the remainder is drawn in *background_color*.
 
-`value` - принимает значение, которое нужно отрисовать в прогресс баре
+**Args:**
 
-`min_value` - минимальная граница значения, которая рисуется в прогресс баре
+- `center_x (int)` - centre point's X
+- `center_y (int)` - centre point's Y
+- `r (int)` - inner radius in pixels
+- `value (float)` - current value (clamped to min_value–max_value)
+- `min_value (float)` - value that corresponds to an empty bar
+- `max_value (float)` - value that corresponds to a full bar
+- `width (int | None)` - radial thickness in pixels. Default `2`
+- `color (display.Color | None)` - colour of the filled portion. Default is `Display.GREEN`
+- `background_color (display.Color | None)` - colour of the unfilled portion. Default is `Display.WHITE`
 
-`max_value` - максимальная граница значения, которая рисуется в прогресс баре
+```python
+display.circular_bar(50, 50, 20, 5, 0, 10)
+```
 
-`height` - высота прогресс бара (по дефолту это 5)
+---
+## Other Functions
 
-`border` - принимает значение `True` или `False`. Если `True` - прогресс бар будет “обернут” в границы. Если `False` - прогресс бар будет иметь линию по середине. (По дефолту это `True`)
+---
+### `.sleep_mode(value)`
+Enter (True) or exit (False) sleep mode.  
+Display content may not be preserved during sleep.
 
-`color` - определяет цвет шкалы, которая заполняется (по дефолту он зеленый)
+**Args:**
 
-`border_color` - определяет цвет границ (по дефолту он белый)
+- `value (bool)` - sleep mode on/off
 
-`background_color` - определяет цвет незаполненной части (по дефолту он черный)
+```python
+display.sleep_mode(True)
+```
 
-### `.circular_bar(center_x, center_y, r, value, min_value, max_value, [width, color, background_color])`
+---
+### `.logo()`
+Draw the Artisan Education product logo at (x, y) with radius *r*.
 
-Рисует круглый индикатор прогресса.
+Fills the screen white before drawing.
 
-`center_x`, `center_y` - координаты центра прогресс бара
+**Args:**
 
-`r` - принимает значение, которое определяет радиус прогресс бара
+- `x (int | None)` - centre column
+- `y (int | None)` - centre row
+- `r (int | None)` - radius of logo
 
-`value` - принимает значение, которое нужно отрисовать в прогресс баре
+```python
+display.logo()
+```
 
-`min_value` - минимальная граница значения, которая рисуется в прогресс баре
+---
+### `.hsv(h, s, v) -> Display.Color`
+Convert HSV to a packed RGB565 colour value.  
+Analogous to color() method, but uses hue, saturation, value as inputs.
 
-`max_value` - максимальная граница значения, которая рисуется в прогресс баре
+**Args:**
 
-`wigth` - принимает значение, которое определяет ширину прогресс бара (по дефолту это 2)
+- `h (float)` - hue in range `[0, 360]`
+- `s (float)` - saturation in range `[0.0, 1.0]`
+- `v (float)` - value / brightness in range `[0.0, 1.0]`
 
-`color` - определяет цвет шкалы, которая заполняется (по дефолту он зеленый)
+```python
+text_color = display.hsv(200, 0.8, 1.0)
 
-`background_color` - определяет цвет незаполненной части (по дефолту он белый)
+display.print("Hi", font = text_color)
+```
 
-### `.draw_poligon(*center_x*, *center_y*, *r*, *n*, [*bump*, *angle_offset*, *color*, *fill*])`
+---
+## Configuration
 
-Рисует полигон
+---
+### `.width() -> int`
+Return the current logical display width in pixels.
 
-`center_x`, `center_y` - координаты центра полигона
+```python
+width = display.width()
+print(width)
+```
 
-`r` - принимает значение, которое определяет радиус до вершин
+---
+### `.height() -> int`
+Return the current logical display height in pixels.
 
-`n` - принимает значение, которое определяет количество вершин
+```python
+height = display.height()
+print(height)
+```
 
-`bump` - принимает значение, которое будет сжимать/разжимать середины ребер (по дефолту это 1.0)
+---
+### `.rotation(r)`
+Rotate the logical display counter-clockwise.
 
-`angle_offset` - принимает значение, на которое полигон будет повернут относительно начальной позиции (по дефолту она зависит от кол-ва вершин)
+- `0` = Portrait `(0°)`
+- `1` = Landscape `(90°)`
+- `2` = Inverse Portrait `(180°)`
+- `3` = Inverse Landscape `(270°)`
 
-`color` - определяет цвет полигона (по дефолту он белый)
+**Args:**
 
-`fill` - принимает значения `True` или `False`. Если `True`, то полигон будет заполненным. Если `False`, то полигон будет полым (по дефолту это `False`)
+- `r` - rotation mode from `0` to `3`
 
-### `.draw_logo([*x*, *y*, *r*])`
+```python
+display.rotation(2)
+```
 
-Рисует логотип Artisan Education
+---
+### `.offset(x_start, y_start)`
+Override the column/row start offsets.
 
-`x`, `y` - координаты центра логотипа (по дефолту это 120 и 100)
+Call *after* ``rotation()`` if you need to adjust for a non-standard panel layout.
 
-`r` - радиус логотипа (по дефолту это 80)
+**Args:**
 
-### `.print(text)`
+- `x_start (int)` - column start offset
+- `y_start (int)` - row start offset
 
-Пишет на дисплее, словно это консоль (как `print()` в Python)
+```python
+display.offset(10, 10)
+```
+
+
+---
+### `.inversion_mode(value)`
+Enable `(True)` or disable `(False)` display color inversion.
+
+**Args:**
+
+- `value (bool)` - value state
+
+```python
+display.inversion_mode(True)
+```
+
+---
+### `.madctl(value | None) -> None | int`
+Get (no argument) or set (with argument) the MADCTL register value.  
+Controls rotation and color order at the hardware level.
+
+**Args:**
+
+- `value (int)` - MADCTL register value
+
+Returns the current value when called with no argument, otherwise sets value and returns None.
+
+```python
+display.madctl()
+```
