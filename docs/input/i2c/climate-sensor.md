@@ -84,7 +84,7 @@ Return the raw (uncompensated) temperature ADC value.
 
 ```python
 temp = climate.read_raw_temp()
-print(press)
+print(temp)
 ```
 
 ---

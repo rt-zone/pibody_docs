@@ -135,7 +135,7 @@ It same as `.duty()`, but uses not normalized values in range `[0, 65535]`.
 If `value` is empty, method returns duty cycle thats used before.
 
 ```python
-buzzer.duty(32768)
+buzzer.duty_u16(32768)
 
-print(buzzer.duty())  # 32768
+print(buzzer.duty_u16())  # 32768
 ```

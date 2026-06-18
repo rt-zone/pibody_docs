@@ -185,7 +185,7 @@ Returns a text-based progress bar representing the current value position betwee
 - `empty_char (char)` - char, filled for undone progress
 
 ```python
-var = encoder.bar()
+bar = encoder.bar()
 print(bar)
 ```
 

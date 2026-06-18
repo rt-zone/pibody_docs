@@ -2,7 +2,7 @@
 title: WiFi
 ---
 # WiFi
-WiFi helps connect PiBody to internet via WiFi. Released functions only for several IOT needed information, lime weather, currency and etc.
+WiFi helps connect PiBody to internet via WiFi. Released functions only for several IOT needed information - time, weather, currency and etc.
 
 ---
 ## Basic usage
@@ -89,15 +89,6 @@ print(data)
 
 ---
 ## Other Functions
-
----
-### `.scan()`
-Returns a list of available WiFi networks and their RSSI. RSSI is the index of signal “strength”. It is measured in negative numbers — the closer the value is to zero, the stronger the signal is considered.
-
-```python
-data = wifi.scan()
-print(data)
-```
 
 ---
 ### `.scan()`

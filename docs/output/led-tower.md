@@ -48,9 +48,9 @@ tower.write()            # update state
 Sets the color of an individual LED. Accepts color tuple (r, g, b) or you can use preset colors.
 
 ```python
-tower.[0] = tower.GREEN  # green
+tower[0] = tower.GREEN  # green
 
-tower.[0] = (0, 255, 0)  # also green
+tower[0] = (0, 255, 0)  # also green
 
 tower.write()            # don't forget to update state
 ```

@@ -18,7 +18,7 @@ You can choose any other slot (except `"C"`, as it does not support I2C communic
 - `slot (string | int | tuple)` - slot label ("A", "B", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``MPU6050`` for *slot*. In old PiBody kits may be ``LSM6DS3`` with depricated functions.
+    Return a class ``MPU6050`` for *slot*. In old PiBody kits may be ``LSM6DS3`` with deprecated functions.
 ```python
 from pibody import GyroAccel
 
@@ -34,8 +34,8 @@ Returns dictionary with the following key-values:
 - `gyro (float, float, float)` - angular speed in º/s `[-250, 250]` as a tuple `(gx, gy, gz)`
 
 ```python
-from pibody import GyroAxel
-imu = GyroAxel('A')
+from pibody import GyroAccel
+imu = GyroAccel('A')
 
 data = imu.read()
 
@@ -47,8 +47,8 @@ print(data)
 Returns acceleration in g `[-2, 2]`.
 
 ```python
-from pibody import GyroAxel
-imu = GyroAxel('A')
+from pibody import GyroAccel
+imu = GyroAccel('A')
 
 x, y, z = imu.read_accel()
 print(x, y, z)
@@ -59,8 +59,8 @@ print(x, y, z)
 Returns angular speed in º/s `[-250, 250]`.
 
 ```python
-from pibody import GyroAxel
-imu = GyroAxel('A')
+from pibody import GyroAccel
+imu = GyroAccel('A')
 
 x, y, z = imu.read_gyro()
 print(x, y, z)
@@ -71,8 +71,8 @@ print(x, y, z)
 Returns temperature in ºC `[-40, 85]`.
 
 ```python
-from pibody import GyroAxel
-imu = GyroAxel('A')
+from pibody import GyroAccel
+imu = GyroAccel('A')
 
 temp = imu.read_temperature()
 print(temp)
@@ -120,10 +120,10 @@ Read accelerometer and fire any registered tilt callbacks.
 Should be called periodically from the main loop.
 
 ```python
-from pibody import GyroAxel
+from pibody import GyroAccel
 from time import sleep
 
-imu = GyroAxel('A')
+imu = GyroAccel('A')
 
 forward = lambda: print('forward')
 backward = lambda: print('backward')

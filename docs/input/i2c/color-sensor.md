@@ -37,7 +37,7 @@ Returns dictionary with the following key-values:
 - `blue` - blue int value `[0, 255]`
 - `hue` - hue float value `[0, 360]`
 - `sat` - sat float value `[0, 1]`
-- `val` - red float value `[0, 1]`
+- `val` - value (brightness) float value `[0, 1]`
 
 ```python
 from pibody import Color   # short alias

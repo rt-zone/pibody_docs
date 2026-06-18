@@ -12,7 +12,7 @@ Also you can use short alias `Touch(slot)`.
 
 **Args:**
 
-- `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT).
+- `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.IN).
 
 **Returns:**
     Return a digital output ``Pin`` for *slot*.

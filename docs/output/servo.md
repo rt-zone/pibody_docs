@@ -98,5 +98,5 @@ servo.on()
 De-initialise the PWM output (disable the servo).
 
 ```python
-servo.on()
+servo.off()
 ```
