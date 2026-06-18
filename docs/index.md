@@ -57,4 +57,4 @@ if btn.value() == 1:   # read
 
 ---
 
-*Documentation source: [`pibody_stubs`](https://github.com/artisan/pibody_stubs) — type stubs with Google-style docstrings used by this site and for IDE support.*
+*Documentation source: [`pibody_libs`](https://github.com/artisan/pibody_libs) — original source library of PiBody.*
