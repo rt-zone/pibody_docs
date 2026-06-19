@@ -33,7 +33,7 @@ pwm = PWM("A")
 
 **Args:**
 
-- `value (int)` - parameter `value` is optional which sets the frequency of PWM. By default `value` is `0`
+- `value (int)` - parameter `value` is optional which sets the frequency of PWM. Useful range is **[20, 5000]**. By default `value` is **0**
 
 If `value` is empty, method returns frequency thats used before.
 
@@ -48,7 +48,7 @@ print(pwm.freq())  # 100
 
 **Args:**
 
-- `value (float)` - parameter `value` is optional which sets the duty cycle of PWM. It can contains value in range [0, 1.0]. By default `value` is `0`
+- `value (float)` - parameter `value` is optional which sets the duty cycle of PWM. It can contains value in range **[0, 1.0]**. By default `value` is **0**
 
 If `value` is empty, method returns duty cycle thats used before.
 
@@ -64,7 +64,7 @@ Get or set the PWM duty cycle as a 16-bit value.
 
 **Args:**
 
-- `value (int)` - parameter `value` is optional which sets the duty cycle of PWM. It can contains value in range [0, 65535]. By default `value` is `32768`
+- `value (int)` - parameter `value` is optional which sets the duty cycle of PWM. It can contains value in range **[0, 65535]**. By default `value` is **32768**
 
 If `value` is empty, method returns duty cycle thats used before.
 
@@ -102,7 +102,7 @@ pwm.deinit()
 
 ---
 ### `.duty_ns(value | None) -> None | int`
-Get or set the PWM duty cycle in nanoseconds.
+Get or set the PWM duty cycle in nanoseconds. The nanosecond value must be between 0 and the total period of your frequency. For example, if you set a frequency of **1000 Hz** (period = *1,000,000 ns*), `.duty_ns()` must fall in the range **[0, 1000000]**.
 
 **Args:**
 

@@ -38,17 +38,14 @@ led.off()  # turns off
 ```
 
 ---
-## Other Functions
-
----
 ### `.value(value | None) -> None | float`
 Get or set Pin value.
 
 **Args:**
 
-- `value (float)` - is optional which turns on or off depending on its state: `1 or 0`
+- `value (float)` - is optional which turns on or off depending on its state: **0 or 1**
 
-Returns the current state `(1 or 0)` when called with no argument, otherwise sets value and returns None.
+Returns the current state **(0 or 1)** when called with no argument, otherwise sets value and returns None.
 
 ```python
 # Turns on, same as led.on()
@@ -72,33 +69,7 @@ print(led.value())  # 0
 ```
 
 ---
-## PWM
-You can use [`pibody.PWM`](pwm.md) class to control a LED module.
-
-The LED can simulate different brightness levels using PWM. Fast blinking creates a dimmed light effect.
-
-```python
-from pibody import PWM
-
-led = PWM("A")
-
-led.freq(1000)  # Blinks 1000 times per second
-led.duty(0.5)   # The LED is off for half of each cycle
-```
-
-`.freq(1000)` means the LED blinks 1000 times per second, and `.duty(0.5)` means the LED is on for half of the time.
-
----
-## API reference
-
-### Configuration
-
-`Pin` objects have several class-level constants that select the operating mode. When
-`pibody.LED()` returns a pin it is already configured as an output, but you can change
-the mode at any time with `init()`.
-
-`.init(mode=-1, pull=-1, *, value=None, alt=None)`
-
+## Other Functions
 
 ### `.high()`
 
@@ -116,4 +87,56 @@ Set the low output level with these equivalent method:
 ```python
 # Same as led.off()
 led.low()
+```
+
+---
+## PWM
+You can use [`pibody.PWM`](pwm.md) to control an LED module and adjust its brightness — not just on/off.
+
+The LED rapidly turns on and off faster than the eye can see. The brain averages this into a perceived brightness level.
+
+### Parameters
+
+- **`freq`** — how many times per second the LED blinks
+    
+    - Below **50 Hz** — visible flickering (useful for attention effects)
+    - **100–200 Hz** — mostly stable, may still flicker in peripheral vision
+    - **500–5000 Hz** — looks fully steady to the human eye. Start at **1000 Hz**
+    - Higher values are fine but won't look different; they use more CPU
+
+- **`duty`** — what fraction of each blink the LED is on (0.0 to 1.0)
+
+    - **0** = fully off
+    - **0.25** = dim
+    - **0.5** = half brightness
+    - **0.75** = bright
+    - **1.0** = fully on (same as `led.on()`)
+
+### Basic example
+
+```python
+from pibody import PWM
+
+led = PWM("A")
+
+led.freq(1000)   # 1 kHz — steady to the eye
+led.duty(0.5)    # half brightness
+```
+
+### Smooth fade effect
+
+```python
+from pibody import PWM
+from time import sleep
+
+led = PWM("A")
+led.freq(1000)
+
+while True:
+    for i in range(0, 101, 1):       # ramp up
+        led.duty(i / 100)
+        sleep(0.01)
+    for i in range(100, -1, -1):     # ramp down
+        led.duty(i / 100)
+        sleep(0.01)
 ```

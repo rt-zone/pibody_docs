@@ -13,7 +13,7 @@ To create LEDTower object call `LEDTower(slot)`.
 
 **Args:**
 
-- `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
+- `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (8, 9, 0, 1 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
     Return a ``NeoPixel`` object for the addressable-LED strip on *slot*.
@@ -35,6 +35,8 @@ tower.write()
 ### `.fill(color)`
 Use the `.fill()` function to make all 8 LEDs on the tower light up in a specific color.
 
+See color list ad *Additional info*.
+
 ```python
 tower.fill(tower.GREEN)  # green
 tower.write()            # update state
@@ -44,8 +46,8 @@ tower.write()            # update state
 ## Other Functions
 
 ---
-### Set one LED item
-Sets the color of an individual LED. Accepts color tuple (r, g, b) or you can use preset colors.
+### Set up one LED item
+Sets the color of an individual LED. Accepts color tuple **(r, g, b)** or you can use preset colors.
 
 ```python
 tower[0] = tower.GREEN  # green
@@ -57,7 +59,7 @@ tower.write()            # don't forget to update state
 
 ---
 ### Get one LED item
-Returns color tuple `(r, g, b)` of the LED.
+Returns color tuple **(r, g, b)** of the LED.
 
 ```python
 led0 = tower[0]
@@ -65,7 +67,7 @@ print(led0)
 ```
 
 ---
-## API reference
+## Additional info
 
 ---
 ### LEDTower preset colors

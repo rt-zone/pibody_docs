@@ -17,7 +17,7 @@ from pibody import Display
 display = Display()
 ```
 
-Also you can call direct object from library.
+Also you can directly call object from library.
 
 ```python
 from pibody import display
@@ -34,11 +34,11 @@ Long lines are wrapped to fit the display width.
 **Args:**
 
 - `*args (Any)` - 
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
-- `color (Display.Color)` - text foreground colour. Default is `Display.WHITE`
+- `font (Any)` - text font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
+- `color (Display.Color)` - text foreground colour. Default is **Display.WHITE**
 
 ```python
-display.print("Hello,", "World!")
+display.print("Hello,", "World!")  # >> Hello, World!
 ```
 
 ---
@@ -50,12 +50,12 @@ Write *text* at (x, y) using *font*.
 - `text (str | int | bytes)` - parameter to print
 - `x (int)` - text column position
 - `y (int)` - text row position
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_small`
-- `fg (Display.Color)` - text foreground colour. Default is `Display.WHITE`
-- `bg (Display.Color)` - text background colour. Default is `Display.BLACK`
+- `font (Any)` - test font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_small**
+- `fg (Display.Color)` - text foreground colour. Default is **Display.WHITE**
+- `bg (Display.Color)` - text background colour. Default is **Display.BLACK**
 
 ```python
-display.text("Pibody", 50, 50, font = font_bold)
+display.text("PiBody", 50, 50, font = font_bold)  # PiBody
 ```
 
 ---
@@ -148,15 +148,15 @@ x, y cords are relative and range from -1 to 1, where 0 is the middle of the cro
 
 **Args:**
 
-- `x (float)` - relative X position (-1 = left, 0 = centre, 1 = right)
-- `y (float)` - relative Y position (-1 = bottom, 0 = centre, 1 = top)
+- `x (float)` - relative X position **(-1 = left, 0 = centre, 1 = right)**
+- `y (float)` - relative Y position **(-1 = bottom, 0 = centre, 1 = top)**
 - `r (int)` - radius
 - `x_center (int)` - left-centre anchor point's X
 - `y_center (int)` - left-centre anchor point's Y
 - `crosshair_radius (int)` - inner radius in pixels
-- `color (Display.Color | None)` - primary color of crosshair. Default is `Display.RED`
-- `border_color (Display.Color | None)` - colour of the border. Default is `Display.WHITE`
-- `background_color (Display.Color | None)` - background color. Default is `Display.BLACK`
+- `color (Display.Color | None)` - primary color of crosshair. Default is **Display.RED**
+- `border_color (Display.Color | None)` - colour of the border. Default is **Display.WHITE**
+- `background_color (Display.Color | None)` - background color. Default is **Display.BLACK**
 
 ```python
 display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
@@ -234,9 +234,9 @@ Draw an arc (thick outline segment of a circle).
 - `center_x (int)` - centre point's X
 - `center_y (int)` - centre point's Y
 - `r (int)` - inner radius in pixels
-- `width (int | None)` -  = radial thickness in pixels. Default is `1`
-- `start_angle (int | None)` - start of arc in degrees. Default is `0`
-- `end_angle (int | None)` - end of arc in degrees. Default is `360`
+- `width (int | None)` -  = radial thickness in pixels. Default is **1**
+- `start_angle (int | None)` - start of arc in degrees. Default is **0**
+- `end_angle (int | None)` - end of arc in degrees. Default is **360**
 
 ```python
 display.arc(display.WHITE, 50, 50, 20)
@@ -255,10 +255,10 @@ Draw a regular *n*-sided polygon with optional mid-edge bulge.
 - `center_y (int)` - left-centre anchor point's Y
 - `r (int)` - circumradius in pixels
 - `n (int)` - number of sides
-- `bump (float | None)` - mid-edge bulge factor relative to r (1.0 = flat). Default is `1.0`
-- `angle_offset (float | None)` - rotation offset in degrees; auto-computed if None. Default is `None`
-- `color (Display.Color | None)` - outline / fill colour. Default is `Display.WHITE`
-- `fill (bool | None)` - filled polygon if `True`, outline only if `False`. Default is `False`
+- `bump (float | None)` - mid-edge bulge factor relative to r (1.0 = flat). Default is **1.0**
+- `angle_offset (float | None)` - rotation offset in degrees; auto-computed if None. Default is **None**
+- `color (Display.Color | None)` - outline / fill colour. Default is **Display.WHITE**
+- `fill (bool | None)` - filled polygon if **True**, outline only if **False**. Default is **False**
 
 ```python
 display.draw_polygon(50, 50, 20, 4, color = Display.GREEN)
@@ -290,9 +290,9 @@ Draw a polygon outline translated to (x, y), optionally rotated *angle* radians 
 - `x (int)` - translation offset column
 - `y (int)` - translation offset row
 - `color (Display.Color)` - primary color of polygon
-- `angle (float)` - rotation angle. Default is `0.0`
-- `center_x (int)` - rotation pivot column. Default is `0`
-- `center_y (int)` - rotation pivot row. Default is `0`
+- `angle (float)` - rotation angle. Default is **0.0**
+- `center_x (int)` - rotation pivot column. Default is **0**
+- `center_y (int)` - rotation pivot row. Default is **0**
 
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
@@ -310,9 +310,9 @@ Draw a filled polygon translated to (x, y), optionally rotated *angle* radians a
 - `x (int)` - translation offset column
 - `y (int)` - translation offset row
 - `color (Display.Color)` - primary color of polygon
-- `angle (float)` - rotation angle. Default is `0.0`
-- `center_x (int)` - rotation pivot column. Default is `0`
-- `center_y (int)` - rotation pivot row. Default is `0`
+- `angle (float)` - rotation angle. Default is **0.0**
+- `center_x (int)` - rotation pivot column. Default is **0**
+- `center_y (int)` - rotation pivot row. Default is **0**
 
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
@@ -326,12 +326,12 @@ Enable / disable dirty-rectangle tracking and query results.
 
 Passing True or False resets the tracked rectangle and enables / disables tracking respectively.
 
-Returns ``(min_x, min_y, max_x, max_y)`` or, if *as_rect* is True, ``(min_x, min_y, width, height)``.
+Returns **(min_x, min_y, max_x, max_y)** or, if *as_rect* is True, **(min_x, min_y, width, height)**.
 
 **Args:**
 
-- `status (bool | None)` - Default is `None`
-- `as_rect (bool | None)` - Default is `False`
+- `status (bool | None)` - Default is **None**
+- `as_rect (bool | None)` - Default is **False**
 
 ```python
 data = display.bounding()
@@ -345,7 +345,7 @@ print(data)
 ### `.blit_buffer(buffer, x, y, width, height)`
 Copy a raw RGB565 buffer to the display at (x, y).
 
-*buffer* must contain ``width * height * 2`` bytes.
+*buffer* must contain **width * height * 2** bytes.
 
 **Args:**
 
@@ -368,7 +368,7 @@ Draw a bitmap module (created by imgtobitmap.py or monofont2bitmap.py) at (x, y)
 - `bitmap (Any)` - bitmap
 - `x (int)` - top-left column
 - `y (int)` - top-left row
-- `index (int | None)` - multi-bitmap index. Default is `0`
+- `index (int | None)` - multi-bitmap index. Default is **0**
 
 ```python
 display.bitmap(bitmap, 0, 0)
@@ -386,7 +386,7 @@ Draw a JPEG at (x, y).
 - `jpg (str | bytes | bytearray)` - may be a filename string or a buffer containing JPEG data
 - `x (int)` - top-left column
 - `y (int)` - top-left row
-- `method (int)` - render method. Use ``st7789.SLOW`` for images that exceed available free RAM. Default is `Display.FAST`
+- `method (int)` - render method. Use **Display.SLOW** for images that exceed available free RAM. Default is **Display.FAST**
 
 ```python
 display.jpg("dog.jpg", 0, 0)
@@ -394,15 +394,15 @@ display.jpg("dog.jpg", 0, 0)
 
 ---
 ### `.jpg_decode(jpg) -> (bytearray, int, int)`
-Decode a JPEG and return ``(buffer, width, height)``.
+Decode a JPEG and return **(buffer, width, height)**.
 
 **Args:**
 
-- `jpg (str | bytes | bytearray)` - an RGB565 bytearray suitable for ``blit_buffer``
-- `x (int | None)` - crop start column. Default is `0`
-- `y (int | None)` - crop start row. Default is `0`
-- `width (int | None)` - width to crop the decoded image. Default is `None`
-- `height (int | None)` - height to crop the decoded image. Default is `None`
+- `jpg (str | bytes | bytearray)` - an RGB565 bytearray suitable for **blit_buffer**
+- `x (int | None)` - crop start column. Default is **0**
+- `y (int | None)` - crop start row. Default is **0**
+- `width (int | None)` - width to crop the decoded image. Default is **None**
+- `height (int | None)` - height to crop the decoded image. Default is **None**
 
 ```python
 display.jpg_decode("dog.jpg")
@@ -414,7 +414,7 @@ Draw a PNG file at (x, y). Transparency is not supported unless *mask* is True, 
 
 **Args:**
 
-- `png (str | bytes | bytearray)` - an RGB565 bytearray suitable for ``blit_buffer``
+- `png (str | bytes | bytearray)` - an RGB565 bytearray suitable for **blit_buffer**
 - `x (int)` - top-left column
 - `y (int)` - top-left row
 - `mask (bool = False)` - transparency mode
@@ -434,7 +434,7 @@ Returns the `width` of the rendered string in pixels.
 
 **Args:**
 
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
 - `s (str)` - text to be showed
 - `x (int)` - text column position
 - `y (int)` - text row position
@@ -449,7 +449,7 @@ Return the pixel length of *s* when rendered with *font*. *proportional / TrueTy
 
 **Args:**
 
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
 - `s (str)` - text to be showed
 
 ```python
@@ -463,12 +463,12 @@ Draw *s* using a Hershey vector *font* with (x, y) as the *lower-left* corner of
 
 **Args:**
 
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
 - `s (str)` - text to be showed
 - `x (int)` - lower-left column
 - `y (int)` - lower-left row
-- `fg (Display.Color | None)` - text foreground colour. Default is `Display.WHITE`
-- `scale (float | None)` - scale. Default is `1.0`
+- `fg (Display.Color | None)` - text foreground colour. Default is **Display.WHITE**
+- `scale (float | None)` - scale. Default is **1.0**
 
 ```python
 display.draw(Display.font_medium, "PiBody", 15, 15)
@@ -480,9 +480,9 @@ Return the pixel length of *s* when drawn with *font* at *scale*. *Hershey vecto
 
 **Args:**
 
-- `font (Any)` - bitmap font module: `font_small`, `font_medium`, `font_large` or `font_bold`. Default is `Display.font_medium`
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
 - `s (str)` - text to be showed
-- `scale (float | None)` - scale. Default is `1.0`
+- `scale (float | None)` - scale. Default is **1.0**
 
 ```python
 length = display.draw_len(Display.font_medium, "PiBody", 15, 15)
@@ -503,12 +503,12 @@ Draw a horizontal progress bar centred vertically on *y*.
 - `value (float)` - current value (clamped to min_value–max_value)
 - `min_value (float)` - value that corresponds to an empty bar
 - `max_value (float)` - value that corresponds to a full bar
-- `length (int | None)` - total bar length in pixels. Default is `100`
-- `height (int | None)` - bar height in pixels. Default is `5`
-- `border (bool | None)` - = if `True`, draw a rectangular border and flood the empty region; if `False`, draw end caps and a centre line instead. Default is `False`
-- `bar_color (Display.Color | None)` - colour of the filled portion. Default is `Display.GREEN`
-- `border_color (Display.Color | None)` - colour of the border / end caps / centre line. Default is `Display.WHITE`
-- `background_color (Display.Color | None)` - colour of the unfilled portion. Default is `Display.BLACK`
+- `length (int | None)` - total bar length in pixels. Default is **100**
+- `height (int | None)` - bar height in pixels. Default is **5**
+- `border (bool | None)` - = if `True`, draw a rectangular border and flood the empty region; if **False**, draw end caps and a centre line instead. Default is **False**
+- `bar_color (Display.Color | None)` - colour of the filled portion. Default is **Display.GREEN**
+- `border_color (Display.Color | None)` - colour of the border / end caps / centre line. Default is **Display.WHITE**
+- `background_color (Display.Color | None)` - colour of the unfilled portion. Default is **Display.BLACK**
 
 ```python
 display.linear_bar(50, 50, 5, 0, 10)
@@ -528,9 +528,9 @@ The filled arc (from -90° to the computed angle) is drawn in *color*; the remai
 - `value (float)` - current value (clamped to min_value–max_value)
 - `min_value (float)` - value that corresponds to an empty bar
 - `max_value (float)` - value that corresponds to a full bar
-- `width (int | None)` - radial thickness in pixels. Default `2`
-- `color (display.Color | None)` - colour of the filled portion. Default is `Display.GREEN`
-- `background_color (display.Color | None)` - colour of the unfilled portion. Default is `Display.WHITE`
+- `width (int | None)` - radial thickness in pixels. Default **2**
+- `color (display.Color | None)` - colour of the filled portion. Default is **Display.GREEN**
+- `background_color (display.Color | None)` - colour of the unfilled portion. Default is **Display.WHITE**
 
 ```python
 display.circular_bar(50, 50, 20, 5, 0, 10)
@@ -575,9 +575,9 @@ Analogous to color() method, but uses hue, saturation, value as inputs.
 
 **Args:**
 
-- `h (float)` - hue in range `[0, 360]`
-- `s (float)` - saturation in range `[0.0, 1.0]`
-- `v (float)` - value / brightness in range `[0.0, 1.0]`
+- `h (float)` - hue in range **[0, 360]**
+- `s (float)` - saturation in range **[0.0, 1.0]**
+- `v (float)` - value / brightness in range **[0.0, 1.0]**
 
 ```python
 text_color = display.hsv(200, 0.8, 1.0)
@@ -610,14 +610,14 @@ print(height)
 ### `.rotation(r)`
 Rotate the logical display counter-clockwise.
 
-- `0` = Portrait `(0°)`
-- `1` = Landscape `(90°)`
-- `2` = Inverse Portrait `(180°)`
-- `3` = Inverse Landscape `(270°)`
+- `0` = Portrait **(0°)**
+- `1` = Landscape **(90°)**
+- `2` = Inverse Portrait **(180°)**
+- `3` = Inverse Landscape **(270°)**
 
 **Args:**
 
-- `r` - rotation mode from `0` to `3`
+- `r` - rotation mode from **0** to **3**
 
 ```python
 display.rotation(2)
@@ -638,10 +638,9 @@ Call *after* ``rotation()`` if you need to adjust for a non-standard panel layou
 display.offset(10, 10)
 ```
 
-
 ---
 ### `.inversion_mode(value)`
-Enable `(True)` or disable `(False)` display color inversion.
+Enable **(True)** or disable **(False)** display color inversion.
 
 **Args:**
 
