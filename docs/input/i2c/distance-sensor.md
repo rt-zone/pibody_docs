@@ -30,7 +30,7 @@ distance = DistanceSensor("A")
 ---
 ### `.read() -> int`
 Perform a single ranging measurement.  
-Returns distance in mm `[20, 2000]`.  
+Returns distance in mm **[20, 2000]**.  
 Returns `20` or `8190` if invalid measurement.
 
 ```python
@@ -46,9 +46,9 @@ print(data)
 ### `.is_valid(distance) -> bool`
 Parameter `distance` is mandatory which should contained actual distance in mm.
 
-Returns `True` or `False` if measurements between `.min_valid_mm` and `.max_valid_mm` are valid.  
-`min_valid_mm` by default is `30`.  
-`max_valid_mm` by default is `2000`.  
+Returns **True** or **False** if measurements between `.min_valid_mm` and `.max_valid_mm` are valid.  
+`.min_valid_mm` by default is **30**.  
+`.max_valid_mm` by default is **2000**.  
 These variables can be changed.
 
 ```python
@@ -73,10 +73,10 @@ Return a text progress-bar of the current distance.
 
 **Args**:
 
-- `max_range (int | None)` - distance (mm) that corresponds to a full bar. By default is `200` mm
-- `width (int | None)` - bar width in characters. By default is `20` symbols
-- `fill_char (string | None)` - character used for the filled portion. By default is `“#”`
-- `empty_char (string | None)` - character used for the empty portion. By default is `" "`
+- `max_range (int | None)` - distance (mm) that corresponds to a full bar. By default is **200** mm
+- `width (int | None)` - bar width in characters. By default is **20** symbols
+- `fill_char (string | None)` - character used for the filled portion. By default is **“#”**
+- `empty_char (string | None)` - character used for the empty portion. By default is **" "**
 
 ```python
 from pibody import Distance   # short alias
@@ -108,7 +108,7 @@ Register a callback fired when the distance changes by more than *change_thresho
 
 - `change_threshold_mm (int)` - minimum delta (mm) to trigger
 - `callback` - called with (distance_mm, delta_mm)
-- `cooldown_ms` - minimum ms between consecutive triggers. By default is `500`
+- `cooldown_ms` - minimum ms between consecutive triggers. By default is **500**
 
 ```python
 distance.add_motion_trigger(100, cb)

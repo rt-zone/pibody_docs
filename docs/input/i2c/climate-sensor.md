@@ -31,9 +31,9 @@ climate = ClimateSensor("A")
 ### `.read() -> (float, float, float)`
 Returns dictionary with the following key-values:
 
-- `temperature` - temperature in °C `[-40, 85]`
-- `humidity` - humidity in %RH `[0, 100]`
-- `pressure` - pressure in hPa `[0, 20000]`
+- `temperature` - temperature in °C **[-40, 85]**
+- `humidity` - humidity in %RH **[0, 100]**
+- `pressure` - pressure in hPa **[0, 20000]**
 
 ```python
 from pibody import Climate  # short alias
@@ -50,7 +50,7 @@ print(f"temp: {temp}, hum: {hum}, pres: {pres}")
 
 ---
 ### `.read_temperature() -> float`
-Return compensated temperature in °C `[-40, 85]`.
+Return compensated temperature in °C **[-40, 85]**.
 
 ```python
 temp = climate.read_temperature()
@@ -59,7 +59,7 @@ print(temp)
 
 ---
 ### `.read_humidity() -> float`
-Return compensated relative humidity in %RH `[0, 100]`.
+Return compensated relative humidity in %RH **[0, 100]**.
 
 ```python
 hum = climate.read_humidity()
@@ -68,7 +68,7 @@ print(hum)
 
 ---
 ### `.read_pressure() -> float`
-Return compensated pressure in hPa `[0, 20000]`.
+Return compensated pressure in hPa **[0, 20000]**.
 
 ```python
 press = climate.read_pressure()
@@ -80,7 +80,7 @@ print(press)
 
 ---
 ### `.read_raw_temp() -> int`
-Return the raw (uncompensated) temperature ADC value.
+Return the raw (uncompensated) temperature ADC value. Output range is **[0, 1048575]**.
 
 ```python
 temp = climate.read_raw_temp()
@@ -89,7 +89,7 @@ print(temp)
 
 ---
 ### `.read_raw_humidity() -> int`
-Return the raw (uncompensated) humidity ADC value.
+Return the raw (uncompensated) humidity ADC value. Output range is **[0, 65535]**.
 
 ```python
 hum = climate.read_raw_humidity()
@@ -98,7 +98,7 @@ print(hum)
 
 ---
 ### `.read_raw_pressure() -> int`
-Return the raw (uncompensated) pressure ADC value.
+Return the raw (uncompensated) pressure ADC value. Output range is **[0, 1048575]**.
 
 ```python
 press = climate.read_raw_pressure()

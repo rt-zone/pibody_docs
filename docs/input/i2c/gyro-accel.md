@@ -29,9 +29,9 @@ imu = GyroAccel("A")
 ### `.read() -> (float, tuple, tuple)`
 Returns dictionary with the following key-values:
 
-- `temp (float)` - temperature in ºC `[-40, 85]`
-- `accel (float, float, float)` - acceleration in g `[-2, 2]` as a tuple `(ax, ay, az)`
-- `gyro (float, float, float)` - angular speed in º/s `[-250, 250]` as a tuple `(gx, gy, gz)`
+- `temp (float)` - temperature in ºC **[-40, 85]**
+- `accel (float, float, float)` - acceleration in g **[-2, 2]** as a tuple **(ax, ay, az)**
+- `gyro (float, float, float)` - angular speed in º/s **[-250, 250]** as a tuple **(gx, gy, gz)**
 
 ```python
 from pibody import GyroAccel
@@ -44,7 +44,7 @@ print(data)
 
 ---
 ### `.read_accel() -> (float, float, float)`
-Returns acceleration in g `[-2, 2]`.
+Returns acceleration in g **[-2, 2]**.
 
 ```python
 from pibody import GyroAccel
@@ -56,7 +56,7 @@ print(x, y, z)
 
 ---
 ### `.read_gyro() -> (float, float, float)`
-Returns angular speed in º/s `[-250, 250]`.
+Returns angular speed in º/s **[-250, 250]**.
 
 ```python
 from pibody import GyroAccel
@@ -68,7 +68,7 @@ print(x, y, z)
 
 ---
 ### `.read_temperature() -> float`
-Returns temperature in ºC `[-40, 85]`.
+Returns temperature in ºC **[-40, 85]**.
 
 ```python
 from pibody import GyroAccel
@@ -103,7 +103,7 @@ Register a callback for a tilt direction.
 
 **Args**:
 
-- `direction (string)` - one of `"forward"`, `"backward"`, `"left"`, `"right"`
+- `direction (string)` - one of **"forward"**, **"backward"**, **"left"**, **"right"**
 - `callback` - zero-argument callable invoked when tilt is detected
 
 **Raises**:

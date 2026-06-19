@@ -32,12 +32,12 @@ color = ColorSensor("A")
 Return a combined RGB + HSV reading.  
 Returns dictionary with the following key-values:
 
-- `red` - red int value `[0, 255] `
-- `green` - green int value `[0, 255]`
-- `blue` - blue int value `[0, 255]`
-- `hue` - hue float value `[0, 360]`
-- `sat` - sat float value `[0, 1]`
-- `val` - value (brightness) float value `[0, 1]`
+- `red` - red int value **[0, 255]**
+- `green` - green int value **[0, 255]**
+- `blue` - blue int value **[0, 255]**
+- `hue` - hue float value **[0, 360]**
+- `sat` - sat float value **[0, 1]**
+- `val` - value (brightness) float value **[0, 1]**
 
 ```python
 from pibody import Color   # short alias
@@ -50,7 +50,7 @@ print(data)
 
 ---
 ### `.readRGB() -> (int, int, int)`
-Return colour-corrected (r, g, b) in `[0, 255]`.
+Return colour-corrected (r, g, b) in **[0, 255]**.
 
 ```python
 from pibody import Color
@@ -62,8 +62,8 @@ print(r, g, b)
 
 ---
 ### `.readHSV() -> (int, int, int)`
-Returns (hue °, saturation, value) derived from readRGB().  
-Int hsv values `[0, 255]`.
+Returns (hue, saturation, value) derived from `readRGB()`.  
+HSV values in range **[0, 255]**.
 
 ```python
 from pibody import Color
@@ -79,8 +79,8 @@ Classify the detected colour by nearest hue.
 
 **Args:**
 
-- `hues (string | int | tuple | None)` - dict mapping colour name - hue in degrees. Defaults to `red/yellow/green/light-blue/blue/magenta`.
-- `min_brightness (float | None)` - optional parameter which is used to determine the minimum brightness at which a color is detected. By default is `0.5`
+- `hues (string | int | tuple | None)` - dict mapping colour name - hue in degrees. Default is **red/yellow/green/light-blue/blue/magenta**
+- `min_brightness (float | None)` - optional parameter which is used to determine the minimum brightness at which a color is detected. By default is **0.5**
 
 ```python
 from pibody import Color
@@ -95,7 +95,7 @@ print(detected_color)  # ex. red
 
 ---
 ### `.lux() -> float`
-Return ambient light level in lux.
+Return ambient light level in lux. Output in range **[0, 16494]**.
 
 ```python
 from pibody import Color
@@ -111,11 +111,11 @@ Returns raw red, green and blue readings, ambient light [Lux] and colour tempera
 
 Returns dictionary with the following key-values:
 
-- `red` - red int value `[0, 255] `
-- `green` - green int value `[0, 255]`
-- `blue` - blue int value `[0, 255]`
-- `white` - white float value
-- `als` - als float value
+- `red` - red int value **[0, 65535]**
+- `green` - green int value **[0, 65535]**
+- `blue` - blue int value **[0, 65535]**
+- `white` - white float value **[0, 65535]**
+- `als` - als float value **[0, 16494]**
 - `cct` - cct float value
 
 ```python
@@ -125,3 +125,19 @@ color = Color('A')
 data = color.readRawData()
 print(data)
 ```
+
+---
+## Additional info
+
+### Default colour hues for `detectColor()`
+
+The table below shows the default hue values used by `detectColor()` to classify a colour. You can override these by passing a custom `hues` dict to the method.
+
+| Colour      | Hue (°) |
+|-------------|---------|
+| <span style="color: #FF0000; font-weight: bold;">Red</span>        | 0       |
+| <span style="color: #FFFF00; font-weight: bold;">Yellow</span>     | 60      |
+| <span style="color: #00FF00; font-weight: bold;">Green</span>      | 120     |
+| <span style="color: #00FFFF; font-weight: bold;">Light Blue</span> | 180     |
+| <span style="color: #0000FF; font-weight: bold;">Blue</span>       | 240     |
+| <span style="color: #FF00FF; font-weight: bold;">Magenta</span>    | 300     |
