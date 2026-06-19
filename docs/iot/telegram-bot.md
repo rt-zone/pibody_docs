@@ -2,7 +2,7 @@
 title: Telegram Bot
 ---
 # Telegram Bot
-Basic Telegram Bot connection for your IOT projects. You need to get your own `API_TOKEN` in official Telegram Bot `BotFather`.
+Basic Telegram Bot connection for your IOT projects. You need to get your own `API_TOKEN` in official Telegram [BotFather](https://telegram.me/BotFather).
 
 ---
 ### `TelegramBot(token, auth_chat_id)`
