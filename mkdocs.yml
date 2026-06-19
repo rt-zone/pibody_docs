@@ -67,6 +67,13 @@ plugins:
         - locale: en
           name: English
           default: true
+          link: /
+        - locale: kk
+          name: Қазақша
+          link: /kk/
+        - locale: ru
+          name: Русский
+          link: /ru/
   # - mkdocstrings:
   #     handlers:
   #       python:
