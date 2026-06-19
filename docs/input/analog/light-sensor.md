@@ -27,7 +27,7 @@ light = LightSensor("C")
 
 ---
 ### `.read() -> float`
-Returns value in range `[0, 1.0]`.
+Returns value in range **[0, 1.0]**.
 
 ```python
 light.read()
@@ -44,7 +44,7 @@ while True:
 
 ---
 ### `.read_u16() -> int`
-Read the raw ADC value in range `[0, 65535]`.
+Read the raw ADC value in range **[0, 65535]**.
 
 ```python
 data = light.read_u16()

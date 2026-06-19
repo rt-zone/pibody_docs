@@ -16,6 +16,7 @@ Also you can use short alias `Motion(slot)`.
 
 **Returns:**
     Return a digital output ``Pin`` for *slot*.
+
 ```python
 from pibody import MotionSensor
 
@@ -24,7 +25,8 @@ motion = MotionSensor("A")
 
 ---
 ### `.read() -> int`
-Returns `1` or `0` depending on its state.
+Returns **0 or 1** depending on its state.
+
 ```python
 motion.read()
 ```
@@ -43,7 +45,7 @@ while True:
 
 ---
 ### `.value() -> int`
-Same as `.read()`, returns `1` or `0` depending on its state.
+Same as `.read()`, returns **0 or 1** depending on its state.
 
 ```python
 value = motion.value()

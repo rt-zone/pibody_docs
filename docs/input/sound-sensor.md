@@ -26,10 +26,12 @@ sound = SoundSensor("A")
 
 ---
 ### `.read() -> (int, float)`
-Return (digital, analog) as a tuple.
+Return (digital, analog) as a tuple.  
+Digital signal **1** if sound was loud.  
+Analog signal returns sound level in range **[0, 1.0]**. **0.5** is default, and it will be sinusoid wave info.
 
-- `digital` - digital sound level `0 or 1`
-- `analog` - analog sound level from `0.0` to `1.0`
+- `digital` - digital sound level **0 or 1**
+- `analog` - analog sound level normalized in range from **0** to **1.0**
 
 ```python
 sound.read()
@@ -54,7 +56,7 @@ while True:
 
 ---
 ### `.read_digital() -> int`
-Return the digital sound level: 0 or 1.
+Return the digital sound level: **0 or 1**.
 
 ```python
 data = sound.read_digital()
@@ -66,8 +68,8 @@ print(data)
 Return the analog sound level.
 
 **Args**:
-- `normalized` - if True (default) returns a float in `[0.0, 1.0]`.
-If False returns the raw 16-bit ADC value `(0–65535)`
+- `normalized` - if **True** returns a float in range **[0, 1.0]**.
+If **False** returns the raw 16-bit ADC value in range **[0, 65535]**. Default is **True**
 
 ```python
 data = sound.read_analog()

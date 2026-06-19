@@ -24,7 +24,7 @@ joystick = Joystick("F")
 
 ---
 ### `.read() -> (int, int)`
-Return `(x, y)` normalised values in `[0.0, 1.0]`, or `None` per axis if unavailable.
+Returns `(x, y)` normalised values in **[0, 1.0]**, or **None** per axis if unavailable.
 
 ```python
 x, y = joystick.read()
@@ -33,7 +33,7 @@ print(x, y)
 
 ---
 ### `.read_x() -> int`
-Return the normalised X-axis value, or `None` if the axis is unavailable.
+Returns normalised X-axis value, or **None** if the axis is unavailable.
 
 ```python
 x = joystick.read_x()
@@ -42,7 +42,7 @@ print(x)
 
 ---
 ### `.read_y() -> int`
-Return the normalised Y-axis value, or `None` if the axis is unavailable.
+Return normalised Y-axis value, or **None** if the axis is unavailable.
 
 ```python
 y = joystick.read_y()
