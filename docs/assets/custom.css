@@ -1,0 +1,84 @@
+:root {
+  /* --- Core Platform Design Tokens --- */
+  --color-neutral50: #f4f7fa;
+  --color-neutral100: #eff2f5;
+  --color-neutral200: #dee4eb;
+  --color-neutral300: #c3ccd6;
+  --color-neutral400: #a8b5c2;
+  --color-neutral: #8593a3;
+  --color-neutral600: #6a7682;
+  --color-neutral700: #505862;
+  --color-neutral800: #353b41;
+  --color-neutral900: #1b1d21;
+  
+  --color-primary50: #e6faf4;
+  --color-primary100: #d4f4ec;
+  --color-primary200: #a9ead8;
+  --color-primary300: #7edfc5;
+  --color-primary400: #53d5b2;
+  --color-primary: #28ca9e;
+  --color-primary600: #20a17f;
+  --color-primary700: #18795f;
+  --color-primary800: #10513f;
+  --color-primary900: #082820;
+
+  --color-warning: #ffab00;
+  --color-error: #f35625;
+}
+
+/* ==========================================
+   LIGHT MODE MAPS
+   ========================================== */
+:root, [data-md-color-scheme="default"] {
+  /* Primary Header & UI Colors */
+  --md-primary-fg-color:            var(--color-primary);
+  --md-primary-fg-color--light:    var(--color-primary400);
+  --md-primary-fg-color--dark:     var(--color-primary700);
+
+  /* Accents, Links, and Buttons */
+  --md-accent-fg-color:             var(--color-primary);
+  --md-accent-fg-color--transparent: var(--color-primary50);
+
+  /* Structure and Backgrounds */
+  --md-default-bg-color:            #ffffff;
+  --md-default-bg-color--light:     var(--color-neutral50);
+  
+  /* Typography Text Shades */
+  --md-typeset-color:               var(--color-neutral800);
+  --md-typeset-a-color:             var(--color-primary600);
+}
+
+/* ==========================================
+   DARK MODE MAPS
+   ========================================== */
+[data-md-color-scheme="slate"] {
+  /* Primary Header & UI Colors */
+  --md-primary-fg-color:            var(--color-neutral900); /* Dark sleek top header bar */
+  --md-primary-fg-color--light:    var(--color-neutral800);
+  --md-primary-fg-color--dark:     var(--color-neutral900);
+
+  /* Accents, Links, and Buttons */
+  --md-accent-fg-color:             var(--color-primary);
+  --md-accent-fg-color--transparent: var(--color-primary900);
+
+  /* Structure and Backgrounds */
+  --md-default-bg-color:            var(--color-neutral900);
+  --md-default-bg-color--light:     var(--color-neutral800);
+
+  /* Typography Text Shades */
+  --md-typeset-color:               var(--color-neutral100);
+  --md-typeset-a-color:             var(--color-primary300);
+}
+
+/* ==========================================
+   GLOBAL BRAND OVERRIDES
+   ========================================== */
+/* Fixes the active side navigation highlight color to use your theme */
+.md-nav__link--active {
+  color: var(--color-primary) !important;
+}
+
+/* Enhances search bar active borders and focus flags */
+.md-search__input:focus + .md-search__icon {
+  color: var(--color-primary) !important;
+}
