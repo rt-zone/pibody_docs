@@ -664,3 +664,21 @@ Returns the current value when called with no argument, otherwise sets value and
 ```python
 display.madctl()
 ```
+
+---
+## Additional info
+
+### Display.Color preset colors
+
+`Display.Color` provides several preset colours you can use with any drawing method.
+
+| Name | Description |
+|---|---|
+| <span style="color: #000000; font-weight: bold;">Display.BLACK</span>   | pure black |
+| <span style="color: #0000FF; font-weight: bold;">Display.BLUE</span>    | blue |
+| <span style="color: #FF0000; font-weight: bold;">Display.RED</span>     | red |
+| <span style="color: #00FF00; font-weight: bold;">Display.GREEN</span>   | green |
+| <span style="color: #00FFFF; font-weight: bold;">Display.CYAN</span>    | cyan |
+| <span style="color: #FF00FF; font-weight: bold;">Display.MAGENTA</span> | magenta |
+| <span style="color: #FFFF00; font-weight: bold;">Display.YELLOW</span>  | yellow |
+| <span style="color: #FFFFFF; font-weight: bold;">Display.WHITE</span>   | pure white |
