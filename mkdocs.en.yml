@@ -1,0 +1,31 @@
+site_name: PiBody Documentation
+
+nav:
+  - Home: index.md
+  - Input:
+    - Analog:
+      - Light Sensor: input/analog/light-sensor.md
+      - Potentiometer: input/analog/potentiometer.md
+    - Digital:
+      - Motion Sensor: input/digital/motion-sensor.md
+      - Push Button: input/digital/push-button.md
+      - Switch: input/digital/switch.md
+      - Touch Sensor: input/digital/touch-sensor.md
+    - I2C:
+      - Climate Sensor: input/i2c/climate-sensor.md
+      - Color Sensor: input/i2c/color-sensor.md
+      - Distance Sensor: input/i2c/distance-sensor.md
+      - Gyro Accel: input/i2c/gyro-accel.md
+    - Joystick: input/joystick.md
+    - Encoder: input/encoder.md
+    - Sound Sensor: input/sound-sensor.md
+  - Output:
+    - LED: output/led.md
+    - Buzzer: output/buzzer.md
+    - LED Tower: output/led-tower.md
+    - Display: output/display.md
+    - Servo: output/servo.md
+    - PWM: output/pwm.md
+  - IOT:
+    - WiFi: iot/wifi.md
+    - Telegram Bot: iot/telegram-bot.md

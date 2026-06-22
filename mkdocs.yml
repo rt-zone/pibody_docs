@@ -74,6 +74,35 @@ plugins:
         - locale: ru
           name: Русский
           link: /ru/
+          nav_translations:
+            Home: Главная
+            Input: Ввод
+            Analog: Аналоговый
+            Light Sensor: Датчик освещённости
+            Potentiometer: Потенциометр
+            Digital: Цифровой
+            Motion Sensor: Датчик движения
+            Push Button: Кнопка
+            Switch: Переключатель
+            Touch Sensor: Сенсорный датчик
+            I2C: Шина I²C
+            Climate Sensor: Датчик климата
+            Color Sensor: Датчик цвета
+            Distance Sensor: Датчик расстояния
+            Gyro Accel: Гироскоп-Акселерометр
+            Joystick: Джойстик
+            Encoder: Энкодер
+            Sound Sensor: Датчик звука
+            Output: Вывод
+            LED: LED
+            Buzzer: Зуммер
+            LED Tower: LED Tower
+            Display: Дисплей
+            Servo: Серво
+            PWM: ШИМ
+            IOT: Интернет вещей
+            WiFi: WiFi
+            Telegram Bot: Telegram Bot
   # - mkdocstrings:
   #     handlers:
   #       python:
