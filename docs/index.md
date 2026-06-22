@@ -3,7 +3,7 @@
 Welcome to the **PiBody** documentation site.
 
 [PiBody](https://artisan.education) is an educational microcontroller board based on the Raspberry Pi Pico W, programmed in MicroPython. This site documents the `pibody` package — the
-firmware library that provides a high-level API for all onboard and pluggable peripherals.
+firmware library that provides a high-level API for all onboard and pluggable peripherals. [artisan.education](https://artisan.education)
 
 ## Modules
 
