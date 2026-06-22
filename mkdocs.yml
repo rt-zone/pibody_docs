@@ -71,6 +71,35 @@ plugins:
         - locale: kk
           name: Қазақша
           link: /kk/
+          nav_translations:
+            Home: Басты бет
+            Input: Кіріс
+            Analog: Аналогты
+            Light Sensor: Жарық сенсоры
+            Potentiometer: Потенциометр
+            Digital: Сандық
+            Motion Sensor: Қозғалыс сенсоры
+            Push Button: Түйме
+            Switch: Ауыстырғыш
+            Touch Sensor: Жанасу сенсоры
+            I2C: Шина I²C
+            Climate Sensor: Климат сенсоры
+            Color Sensor: Түс сенсоры
+            Distance Sensor: Қашықтық сенсоры
+            Gyro Accel: Гиро Аксель
+            Joystick: Джойстик
+            Encoder: Энкодер
+            Sound Sensor: Дыбыс сенсоры
+            Output: Шығыс
+            LED: LED
+            Buzzer: Дыбыстағыш
+            LED Tower: LED Tower
+            Display: Дисплей
+            Servo: Серво
+            PWM: ИЕМ
+            IOT: Заттар интернеті
+            WiFi: WiFi
+            Telegram Bot: Telegram Bot
         - locale: ru
           name: Русский
           link: /ru/
