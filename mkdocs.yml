@@ -63,6 +63,7 @@ extra_css:
 plugins:
   - search
   - i18n:
+      sitemap: true
       languages:
         - locale: en
           name: English
