@@ -6,7 +6,7 @@ Motion Sensor - is a device that detects movement.
 
 ---
 ### `MotionSensor(slot) -> Pin`
-To create MotionSensor object call `MotionSensor(slot)`.
+To create a MotionSensor object, call `MotionSensor(slot)`.
 
 Also you can use short alias `Motion(slot)`.
 
@@ -15,7 +15,7 @@ Also you can use short alias `Motion(slot)`.
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.IN).
 
 **Returns:**
-    Return a digital output ``Pin`` for *slot*.
+    Return a digital input ``Pin`` for *slot*.
 
 ```python
 from pibody import MotionSensor

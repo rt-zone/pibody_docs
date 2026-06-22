@@ -2,7 +2,7 @@
 title: Telegram Bot
 ---
 # Telegram Bot
-Базовое подключение Telegram Bot для ваших IoT-проектов. Вам нужно получить собственный `API_TOKEN` в официальном [BotFather](https://telegram.me/BotFather) Telegram.
+Базовое подключение Telegram-бота для ваших IoT-проектов. Вам необходимо получить собственный `API_TOKEN` у официального бота Telegram [BotFather](https://telegram.me/BotFather).
 
 ---
 ### `TelegramBot(token, auth_chat_id)`
@@ -14,7 +14,7 @@ title: Telegram Bot
 - `auth_chat_id (string | int | None)` — ID чата по умолчанию для отправки сообщений
 
 **Возвращает:**
-    Возвращает класс ``TelegramBot``.
+    Возвращает объект ``TelegramBot``.
 
 ```python
 from pibody import TelegramBot
@@ -25,7 +25,7 @@ bot = TelegramBot("token")
 ---
 ### `.send_message(message, chat_id)`
 Отправляет текстовое сообщение.  
-Использует *chat_id*, если он указан, иначе возвращается к ``auth_id``.  
+Использует *chat_id*, если он указан, иначе использует ``auth_chat_id``.  
 Ничего не делает, если нет доступного ID.
 
 **Аргументы:**

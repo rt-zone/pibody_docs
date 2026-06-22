@@ -8,14 +8,14 @@ title: Сенсорный датчик
 ### `TouchSensor(slot) -> Pin`
 Чтобы создать объект TouchSensor, вызовите `TouchSensor(slot)`.
 
-Также можно использовать короткий вызов `Touch(slot)`.
+Также можно использовать короткий псевдоним `Touch(slot)`.
 
 **Аргументы:**
 
 - `slot (string | int | tuple)` — метка слота ("A", "B", "C", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN).
 
 **Возвращает:**
-    Возвращает цифровой выход ``Pin`` для *slot*.
+    Возвращает цифровой вход ``Pin`` для *slot*.
 ```python
 from pibody import TouchSensor
 
@@ -31,7 +31,7 @@ touch.read()
 ```
 
 ```python
-from pibody import Touch  # короткий вызов
+from pibody import Touch  # короткий псевдоним
 
 touch = Touch("A")
 

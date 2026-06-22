@@ -11,16 +11,16 @@ title: Датчик цвета
 ### `ColorSensor(slot)`
 Чтобы создать объект ColorSensor, вызовите `ColorSensor(slot)`.
 
-Также можно использовать короткий вызов `Color(slot)`.
+Также можно использовать короткий псевдоним `Color(slot)`.
 
 Вы можете выбрать любой другой слот (кроме `"C"`, так как он не поддерживает связь по I2C).
 
 **Аргументы:**
 
-- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN)
 
 **Возвращает:**
-    Возвращает класс ``VEML6040`` для *slot*.
+    Возвращает объект ``VEML6040`` для *slot*.
 ```python
 from pibody import ColorSensor
 
@@ -40,7 +40,7 @@ color = ColorSensor("A")
 - `val` — яркость float значение **[0, 1]**
 
 ```python
-from pibody import Color   # короткий вызов
+from pibody import Color   # короткий псевдоним
 color = Color('A')
 
 data = color.read()				  

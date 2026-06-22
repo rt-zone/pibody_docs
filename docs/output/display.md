@@ -9,7 +9,7 @@ Singleton — always returns the same instance
 
 ---
 ### `Display()`
-To create Display object call `Display()`.
+To create a Display object, call `Display()`.
 
 ```python
 from pibody import Display

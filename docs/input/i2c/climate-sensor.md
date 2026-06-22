@@ -9,7 +9,7 @@ Climate sensor is a smart device that can measure temperature, atmospheric press
 
 ---
 ### `ClimateSensor(slot)`
-To create ClimateSensor object call `ClimateSensor(slot)`.
+To create a ClimateSensor object, call `ClimateSensor(slot)`.
 
 Also you can use short alias `Climate(slot)`.
 
@@ -20,7 +20,7 @@ You can choose any other slot (except `"C"`, as it does not support I2C communic
 - `slot (string | int | tuple)` - slot label ("A", "B", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``BME280`` for *slot*.
+    Return a ``BME280`` object for *slot*.
 ```python
 from pibody import ClimateSensor
 

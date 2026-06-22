@@ -15,7 +15,7 @@ TouchSensor объектісін жасау үшін `TouchSensor(slot)` шақ�
 - `slot (string | int | tuple)` — слот белгісі ("A", "B", "C", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN).
 
 **Қайтарады:**
-    *slot* үшін сандық шығыс ``Pin`` қайтарады.
+    *slot* үшін сандық кіріс ``Pin`` қайтарады.
 ```python
 from pibody import TouchSensor
 

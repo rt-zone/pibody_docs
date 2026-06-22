@@ -9,7 +9,7 @@ The `pibody.Buzzer()` is a device that produces sound when it receives a signal.
 
 ---
 ### `Buzzer(slot) -> PWM`
-To create Buzzer object call `Buzzer(slot)`.
+To create a Buzzer object, call `Buzzer(slot)`.
 
 **Args:**
 

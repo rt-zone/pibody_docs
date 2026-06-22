@@ -11,16 +11,16 @@ title: Датчик расстояния
 ### `DistanceSensor(slot)`
 Чтобы создать объект DistanceSensor, вызовите `DistanceSensor(slot)`.
 
-Также можно использовать короткий вызов `Distance(slot)`.
+Также можно использовать короткий псевдоним `Distance(slot)`.
 
 Вы можете выбрать любой другой слот (кроме `"C"`, так как он не поддерживает связь по I2C).
 
 **Аргументы:**
 
-- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN)
 
 **Возвращает:**
-    Возвращает класс ``VL53L0X`` для *slot*.
+    Возвращает объект ``VL53L0X`` для *slot*.
 ```python
 from pibody import DistanceSensor
 
@@ -34,7 +34,7 @@ distance = DistanceSensor("A")
 Возвращает `20` или `8190` при некорректном измерении.
 
 ```python
-from pibody import Distance   # короткий вызов
+from pibody import Distance   # короткий псевдоним
 distance = Distance('A')
 
 data = distance.read()
@@ -52,7 +52,7 @@ print(data)
 Эти переменные можно изменять.
 
 ```python
-from pibody import Distance   # короткий вызов
+from pibody import Distance   # короткий псевдоним
 distance = Distance('A')
 
 distance.min_valid_mm = 50
@@ -79,7 +79,7 @@ print(valid)
 - `empty_char (string | None)` — символ, используемый для пустой части. По умолчанию: **" "**
 
 ```python
-from pibody import Distance   # короткий вызов
+from pibody import Distance   # короткий псевдоним
 distance = Distance('A')
 
 bar = distance.bar()

@@ -9,14 +9,14 @@ Encoder is a device that converts rotational movement into a digital signal. It 
 
 ---
 ### `Encoder(slot)`
-To create Encoder object call `Encoder(slot)`.
+To create a Encoder object, call `Encoder(slot)`.
 
 **Args:**
 
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class output ``RotaryEncoder`` for *slot*.
+    Return a ``RotaryEncoder`` object for *slot*.
 ```python
 from pibody import Encoder
 
@@ -47,8 +47,8 @@ Bounds encoder values in a range from **min_val** to **max_val**.
 
 **Args**:
 
-- `min_val (int | float)` - minimum value of encoder. By default is **0**
-- `max_val (int | float)` - maximum value of encoder. By default is **10**
+- `min_val (int | float)` - minimum value of encoder. By default, it is **0**
+- `max_val (int | float)` - maximum value of encoder. By default, it is **10**
 
 ```python
 encoder.bound(1, 10)
@@ -60,8 +60,8 @@ Wraps encoder values in a range from **min_val** to **max_val**.
 
 **Args**:
 
-- `min_val (int | float)` - minimum value of encoder. By default is **0**
-- `max_val (int | float)` - maximum value of encoder. By default is **10**
+- `min_val (int | float)` - minimum value of encoder. By default, it is **0**
+- `max_val (int | float)` - maximum value of encoder. By default, it is **10**
 
 ```python
 encoder.wrap(1, 10)
@@ -93,7 +93,7 @@ Set's value of encoder to value variable.
 
 **Args**:
 
-- `val (int | float)` - value of encoder. By default is **0**
+- `val (int | float)` - value of encoder. By default, it is **0**
 
 ```python
 encoder.set_value(0)
@@ -134,7 +134,7 @@ Changes increment value of encoder to incr.
 
 **Args**:
 
-- `incr (int | float)` - - increment/decrement step of encoder. By default is **1**
+- `incr (int | float)` - - increment/decrement step of encoder. By default, it is **1**
 
 ```python
 encoder.set_incr(0.1)
@@ -149,11 +149,11 @@ Set encoder's configuration. Any parameter not provided will remain unchanged.
 
 **Args**:
 
-- `value (int | float)` - current value of encoder. By default is **0**
-- `min_val (int | float)` - minimum value of encoder. By default is **0**
-- `max_val (int | float)` - maximum value of encoder. By default is **10**
-- `incr (int | float)` - - increment/decrement step of encoder. By default is **1**
-- `reverse (bool)` - if **True**, rotation direction will be inverted. By default is **False**
+- `value (int | float)` - current value of encoder. By default, it is **0**
+- `min_val (int | float)` - minimum value of encoder. By default, it is **0**
+- `max_val (int | float)` - maximum value of encoder. By default, it is **10**
+- `incr (int | float)` - - increment/decrement step of encoder. By default, it is **1**
+- `reverse (bool)` - if **True**, rotation direction will be inverted. By default, it is **False**
 - `range_mode` - is optional integer which sets the value handling mode:
 
     - `RANGE_UNBOUNDED` (1) → value can increase/decrease without limit

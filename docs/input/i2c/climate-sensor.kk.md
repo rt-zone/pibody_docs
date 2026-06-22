@@ -17,10 +17,10 @@ ClimateSensor объектісін жасау үшін `ClimateSensor(slot)` ш�
 
 **Аргументтер:**
 
-- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN)
 
 **Қайтарады:**
-    *slot* үшін ``BME280`` класын қайтарады.
+    *slot* үшін ``BME280`` объектісін қайтарады.
 ```python
 from pibody import ClimateSensor
 

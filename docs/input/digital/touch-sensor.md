@@ -6,7 +6,7 @@ Touch Sensor — is a button that detects the touch of a finger or a conductive 
 
 ---
 ### `TouchSensor(slot) -> Pin`
-To create TouchSensor object call `TouchSensor(slot)`.
+To create a TouchSensor object, call `TouchSensor(slot)`.
 
 Also you can use short alias `Touch(slot)`.
 
@@ -15,7 +15,7 @@ Also you can use short alias `Touch(slot)`.
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.IN).
 
 **Returns:**
-    Return a digital output ``Pin`` for *slot*.
+    Return a digital input ``Pin`` for *slot*.
 ```python
 from pibody import TouchSensor
 

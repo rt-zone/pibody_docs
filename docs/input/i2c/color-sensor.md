@@ -9,7 +9,7 @@ Color Sensor — a high-precision device that measures the color of an object an
 
 ---
 ### `ColorSensor(slot)`
-To create ColorSensor object call `ColorSensor(slot)`.
+To create a ColorSensor object, call `ColorSensor(slot)`.
 
 Also you can use short alias `Color(slot)`.
 
@@ -20,7 +20,7 @@ You can choose any other slot (except `"C"`, as it does not support I2C communic
 - `slot (string | int | tuple)` - slot label ("A", "B", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``VEML6040`` for *slot*.
+    Return a ``VEML6040`` object for *slot*.
 ```python
 from pibody import ColorSensor
 
@@ -80,7 +80,7 @@ Classify the detected colour by nearest hue.
 **Args:**
 
 - `hues (string | int | tuple | None)` - dict mapping colour name - hue in degrees. Default is **red/yellow/green/light-blue/blue/magenta**
-- `min_brightness (float | None)` - optional parameter which is used to determine the minimum brightness at which a color is detected. By default is **0.5**
+- `min_brightness (float | None)` - optional parameter which is used to determine the minimum brightness at which a color is detected. By default, it is **0.5**
 
 ```python
 from pibody import Color

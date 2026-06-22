@@ -13,10 +13,10 @@ title: Энкодер
 
 **Аргументы:**
 
-- `slot (string | int | tuple)` — метка слота ("A", "B", "C", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — метка слота ("A", "B", "C", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN)
 
 **Возвращает:**
-    Возвращает класс ``RotaryEncoder`` для *slot*.
+    Возвращает объект ``RotaryEncoder`` для *slot*.
 ```python
 from pibody import Encoder
 

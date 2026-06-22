@@ -2,31 +2,31 @@
 
 **PiBody** анықтамалық сайтына қош келдіңіз.
 
-[PiBody](https://artisan.education) — Raspberry Pico W негізіндегі, MicroPython тілінде бағдарламаланатын білім беру микроконтроллерлік платасы. Бұл сайт `pibody` пакетінің — барлық кірістірілген және қосылатын перифериялық құрылғыларға арналған жоғары деңгейлі API беретін firmware кітапханасының анықтамалығын сипаттайды.
+[PiBody](https://artisan.education) — Raspberry Pi Pico W негізіндегі, MicroPython тілінде бағдарламаланатын білім беру микроконтроллерлік платасы. Бұл сайт `pibody` пакетінің — барлық кірістірілген және қосылатын перифериялық құрылғыларға арналған жоғары деңгейлі API беретін микробағдарлама (firmware) кітапханасының анықтамалығын ұсынады.
 
 ## Модульдер
 
 | Модульдер | Сипаттамасы |
 |---|---|
 | Кіріс (Аналогты) |
-| [`pibody.LightSensor`](input/analog/light-sensor.md) | Аналогты кіріс АЦП (жарық сенсорын оқу) |
-| [`pibody.Potentiometer`](input/analog/potentiometer.md) | Аналогты кіріс АЦП (потенциометр күйін оқу) |
+| [`pibody.LightSensor`](input/analog/light-sensor.md) | Аналогтық кіріс АЦП (жарық датчигінің көрсеткішін оқу) |
+| [`pibody.Potentiometer`](input/analog/potentiometer.md) | Аналогтық кіріс АЦП (потенциометр күйін оқу) |
 | Кіріс (Сандық) |
-| [`pibody.MotionSensor`](input/digital/motion-sensor.md) | Сандық кіріс пины (қозғалыс сенсорын оқу) |
-| [`pibody.Button`](input/digital/push-button.md) | Сандық кіріс пины (түймені оқу) |
-| [`pibody.Switch`](input/digital/switch.md) | Сандық кіріс пины (ауыстырғышты оқу) |
-| [`pibody.TouchSensor`](input/digital/touch-sensor.md) | Сандық кіріс пины (жанасу сенсорын оқу) |
+| [`pibody.MotionSensor`](input/digital/motion-sensor.md) | Сандық кіріс пині (қозғалыс сенсорын оқу) |
+| [`pibody.Button`](input/digital/push-button.md) | Сандық кіріс пині (түйме күйін оқу) |
+| [`pibody.Switch`](input/digital/switch.md) | Сандық кіріс пині (ауыстырғыш күйін оқу) |
+| [`pibody.TouchSensor`](input/digital/touch-sensor.md) | Сандық кіріс пині (жанасу сенсорын оқу) |
 | Кіріс (I2C) |
 | [`pibody.ClimateSensor`](input/i2c/climate-sensor.md) | Температура, ылғалдылық және қысым |
 | [`pibody.ColorSensor`](input/i2c/color-sensor.md) | RGBW түс сенсоры |
 | [`pibody.DistanceSensor`](input/i2c/distance-sensor.md) | Лазерлік қашықтық өлшегіш |
 | [`pibody.GyroAccel`](input/i2c/gyro-accel.md) | IMU (акселерометр + гироскоп) |
 | Кіріс |
-| [`pibody.Joystick`](input/joystick.md) | Екі осьті аналогты джойстик |
+| [`pibody.Joystick`](input/joystick.md) | Екі осьті аналогтық джойстик |
 | [`pibody.Encoder`](input/encoder.md) | Айналмалы энкодер |
-| [`pibody.SoundSensor`](input/sound-sensor.md) | Дыбыс детекторы (аналогты + сандық шығыстар) |
+| [`pibody.SoundSensor`](input/sound-sensor.md) | Дыбыс детекторы (аналогтық + сандық шығыстар) |
 | Шығыс |
-| [`pibody.LED`](output/led.md) | Сандық шығыс пины (жарықдиодты басқару) |
+| [`pibody.LED`](output/led.md) | Сандық шығыс пині (жарықдиодты басқару) |
 | [`pibody.Buzzer`](output/buzzer.md) | Пьезо дыбыстағыш / динамик |
 | [`pibody.LEDTower`](output/led-tower.md) | Мекенжайланатын RGB жарықдиодты лента |
 | [`pibody.Display`](output/display.md) | 320×240 OLED дисплей |

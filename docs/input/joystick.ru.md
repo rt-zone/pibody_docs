@@ -15,7 +15,7 @@ title: Джойстик
 - `slot (string)` — метка слота ("F")
 
 **Возвращает:**
-    Возвращает класс ``Joystick`` для *slot*.
+    Возвращает объект ``Joystick`` для *slot*.
 ```python
 from pibody import Joystick
 

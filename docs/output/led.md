@@ -9,7 +9,7 @@ The `pibody.LED()` factory function returns a `Pin` object configured as a digit
 
 ---
 ### `LED(slot) -> Pin`
-To create LED object call `LED(slot)`.
+To create a LED object, call `LED(slot)`.
 
 **Args:**
 

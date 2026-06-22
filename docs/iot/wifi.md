@@ -2,17 +2,17 @@
 title: WiFi
 ---
 # WiFi
-WiFi helps connect PiBody to internet via WiFi. Released functions only for several IOT needed information - time, weather, currency and etc.
+The WiFi module allows connecting the PiBody to the internet over a Wi-Fi network. It provides functions to retrieve IoT-related information such as time, weather, exchange rates, and location.
 
 ---
 ## Basic usage
 
 ---
 ### `WiFi()`
-To create WiFi object call `WiFi()`.
+To create a WiFi object, call `WiFi()`.
 
 **Returns:**
-    Return a class ``WiFi``.
+    Return a ``WiFi`` object.
 ```python
 from pibody import WiFi
 
@@ -43,7 +43,7 @@ With this method, you can find out the current time from the internet. You can s
 
 **Args:**
 
-- `gmt (int | None)` - time zone. By default is **+5**
+- `gmt (int | None)` - time zone. By default, it is **+5**
 - `formatted (bool | None)` - if **True**, return formatted string with time data 
 
 ```python
@@ -57,8 +57,8 @@ Returns the exchange rate. In the arguments, you can specify which currency to c
 
 **Args:**
 
-- `from_currency (string | None)` - source currency code. By default is **USD**
-- `to_currency (string | None)` - target currency code. By default is **KZT**
+- `from_currency (string | None)` - source currency code. By default, it is **USD**
+- `to_currency (string | None)` - target currency code. By default, it is **KZT**
 
 ```python
 data = wifi.get_currency(from_currency="USD", to_currency="KZT")
@@ -71,7 +71,7 @@ This method allows you to know the current outdoor temperature. You can specify 
 
 **Args:**
 
-- `city (string | None)` - city name. By default is **Astana**
+- `city (string | None)` - city name. By default, it is **Astana**
 
 ```python
 data = wifi.get_temperature("Astana")

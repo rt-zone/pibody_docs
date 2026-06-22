@@ -15,7 +15,7 @@ PiBody-де тек F слота ғана бір уақытта екі анало
 - `slot (string)` — слот белгісі ("F")
 
 **Қайтарады:**
-    *slot* үшін ``Joystick`` шығыс класын қайтарады.
+    *slot* үшін ``Joystick`` объектісін қайтарады.
 ```python
 from pibody import Joystick
 

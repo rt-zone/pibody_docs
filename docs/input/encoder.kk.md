@@ -13,10 +13,10 @@ Encoder объектісін жасау үшін `Encoder(slot)` шақырың�
 
 **Аргументтер:**
 
-- `slot (string | int | tuple)` — слот белгісі ("A", "B", "C", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — слот белгісі ("A", "B", "C", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN)
 
 **Қайтарады:**
-    *slot* үшін ``RotaryEncoder`` шығыс класын қайтарады.
+    *slot* үшін ``RotaryEncoder`` объектісін қайтарады.
 ```python
 from pibody import Encoder
 
@@ -34,7 +34,7 @@ print(data)
 
 ---
 ### `.value() -> int`
-`.read()` сияқты, энкодердың ағымдағы орнын қайтарады.
+`.read()` сияқты, энкодердің ағымдағы орнын қайтарады.
 
 ```python
 value = encoder.value()
@@ -141,7 +141,7 @@ encoder.set_incr(0.1)
 ```
 
 ---
-## API анықтамасы
+## API анықтамалығы
 
 ---
 ### `.set(value, min_val, incr, max_val, reverse, range_mode)`

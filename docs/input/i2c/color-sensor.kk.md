@@ -17,10 +17,10 @@ ColorSensor объектісін жасау үшін `ColorSensor(slot)` шақ�
 
 **Аргументтер:**
 
-- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN)
 
 **Қайтарады:**
-    *slot* үшін ``VEML6040`` класын қайтарады.
+    *slot* үшін ``VEML6040`` объектісін қайтарады.
 ```python
 from pibody import ColorSensor
 

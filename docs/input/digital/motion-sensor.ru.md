@@ -8,14 +8,14 @@ title: Датчик движения
 ### `MotionSensor(slot) -> Pin`
 Чтобы создать объект MotionSensor, вызовите `MotionSensor(slot)`.
 
-Также можно использовать короткий вызов `Motion(slot)`.
+Также можно использовать короткий псевдоним `Motion(slot)`.
 
 **Аргументы:**
 
 - `slot (string | int | tuple)` — метка слота ("A", "B", "C", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN).
 
 **Возвращает:**
-    Возвращает цифровой выход ``Pin`` для *slot*.
+    Возвращает цифровой вход ``Pin`` для *slot*.
 
 ```python
 from pibody import MotionSensor
@@ -32,7 +32,7 @@ motion.read()
 ```
 
 ```python
-from pibody import Motion  # короткий вызов
+from pibody import Motion  # короткий псевдоним
 
 motion = Motion("A")
 

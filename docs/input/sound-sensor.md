@@ -6,7 +6,7 @@ Sound Sensor converts sound into an electrical signal.
 
 ---
 ### `SoundSensor(slot)`
-To create SoundSensor object call `SoundSensor(slot)`.
+To create a SoundSensor object, call `SoundSensor(slot)`.
 
 Also you can use short alias `Sound(slot)`.
 
@@ -17,7 +17,7 @@ Since the sound sensor can work as digital and analog, as analog it can only be 
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``SoundSensor`` for *slot*.
+    Return a ``SoundSensor`` object for *slot*.
 ```python
 from pibody import SoundSensor
 

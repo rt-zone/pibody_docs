@@ -6,7 +6,7 @@ Joystick is a small control lever that can be moved with your fingers. It is use
 
 ---
 ### `Joystick(slot)`
-To create Joystick object call `Joystick(slot)`.
+To create a Joystick object, call `Joystick(slot)`.
 
 Only slot F on PiBody can handle two analog signals at the same time, so on other slots the joystick will not work correctly.
 
@@ -15,7 +15,7 @@ Only slot F on PiBody can handle two analog signals at the same time, so on othe
 - `slot (string)` - slot label ("F")
 
 **Returns:**
-    Return a class output ``Joystick`` for *slot*.
+    Return a ``Joystick`` object for *slot*.
 ```python
 from pibody import Joystick
 

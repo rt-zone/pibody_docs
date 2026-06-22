@@ -14,10 +14,10 @@ SoundSensor объектісін жасау үшін `SoundSensor(slot)` шақ�
 
 **Аргументтер:**
 
-- `slot (string | int | tuple)` — слот белгісі ("A", "B", "C", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — слот белгісі ("A", "B", "C", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN)
 
 **Қайтарады:**
-    *slot* үшін ``SoundSensor`` класын қайтарады.
+    *slot* үшін ``SoundSensor`` объектісін қайтарады.
 ```python
 from pibody import SoundSensor
 

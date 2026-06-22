@@ -9,7 +9,7 @@ LED Tower — is a strip consisting of 8 LEDs. Each LED can be controlled indivi
 
 ---
 ### `LEDTower(slot) -> NeoPixel`
-To create LEDTower object call `LEDTower(slot)`.
+To create a LEDTower object, call `LEDTower(slot)`.
 
 **Args:**
 

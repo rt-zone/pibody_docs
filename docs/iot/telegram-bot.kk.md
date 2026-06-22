@@ -2,7 +2,7 @@
 title: Telegram Bot
 ---
 # Telegram Bot
-IoT жобаларыңыз үшін Telegram Bot негізгі қосылуы. Ресми [BotFather](https://telegram.me/BotFather) Telegram-да өзіңіздің `API_TOKEN` алуыңыз керек.
+IoT жобаларыңызға арналған Telegram-ботпен негізгі қосылу. Ресми Telegram [BotFather](https://telegram.me/BotFather) ботынан өз `API_TOKEN` токеніңізді алуыңыз қажет.
 
 ---
 ### `TelegramBot(token, auth_chat_id)`
@@ -14,7 +14,7 @@ TelegramBot объектісін жасау үшін `TelegramBot(token)` шақ
 - `auth_chat_id (string | int | None)` — хабарламаларды жіберу үшін әдепкі чат ID
 
 **Қайтарады:**
-    ``TelegramBot`` класын қайтарады.
+    ``TelegramBot`` объектісін қайтарады.
 
 ```python
 from pibody import TelegramBot
@@ -25,7 +25,7 @@ bot = TelegramBot("token")
 ---
 ### `.send_message(message, chat_id)`
 Мәтіндік хабарлама жібереді.  
-*chat_id* берілсе, соны пайдаланады, әйтпесе ``auth_id``-ға оралады.  
+*chat_id* берілсе, соны пайдаланады, әйтпесе ``auth_chat_id``-ға оралады.  
 Қолжетімді ID болмаса, ештеңе жасамайды.
 
 **Аргументтер:**

@@ -17,10 +17,10 @@ DistanceSensor объектісін жасау үшін `DistanceSensor(slot)` �
 
 **Аргументтер:**
 
-- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — слот белгісі ("A", "B", "D", "E", "F", "G", "H"), пин порты (0, 2 және т.б.), кортеж (0, Pin.IN)
 
 **Қайтарады:**
-    *slot* үшін ``VL53L0X`` класын қайтарады.
+    *slot* үшін ``VL53L0X`` объектісін қайтарады.
 ```python
 from pibody import DistanceSensor
 

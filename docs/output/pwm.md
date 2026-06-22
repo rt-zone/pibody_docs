@@ -14,7 +14,7 @@ PWM consists of two main parameters:
 
 ---
 ### `PWM(slot) -> Pin`
-To create PWM object call `PWM(slot)`.
+To create a PWM object, call `PWM(slot)`.
 
 **Args:**
 

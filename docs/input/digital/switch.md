@@ -6,14 +6,14 @@ Switch - is a simple mechanism that controls the flow of electric current.
 
 ---
 ### `Switch(slot) -> Pin`
-To create Switch object call `Switch(slot)`.
+To create a Switch object, call `Switch(slot)`.
 
 **Args:**
 
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.IN).
 
 **Returns:**
-    Return a digital output ``Pin`` for *slot*.
+    Return a digital input ``Pin`` for *slot*.
 ```python
 from pibody import Switch
 

@@ -6,14 +6,14 @@ A button is a simple switching mechanism used to control the flow of current. Wh
 
 ---
 ### `Button(slot) -> Pin`
-To create Button object call `Button(slot)`.
+To create a Button object, call `Button(slot)`.
 
 **Args:**
 
 - `slot (string | int | tuple)` - slot label ("A", "B", "C", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.IN).
 
 **Returns:**
-    Return a digital output ``Pin`` for *slot*.
+    Return a digital input ``Pin`` for *slot*.
 ```python
 from pibody import Button
 

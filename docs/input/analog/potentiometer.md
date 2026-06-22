@@ -6,7 +6,7 @@ Potentiometer (variable resistor) is similar to a regular resistor, but its resi
 
 ---
 ### `Potentiometer(slot) -> ADC`
-To create Potentiometer object call `Potentiometer(slot)`.
+To create a Potentiometer object, call `Potentiometer(slot)`.
 
 Also you can use short alias `Pot(slot)`.
 

@@ -6,7 +6,7 @@ Light Sensor is an analog sensor capable of reading the level of light falling o
 
 ---
 ### `LightSensor(slot) -> ADC`
-To create LightSensor object call `LightSensor(slot)`.
+To create a LightSensor object, call `LightSensor(slot)`.
 
 Also you can use short alias `Light(slot)`.
 

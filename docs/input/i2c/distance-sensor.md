@@ -9,7 +9,7 @@ Distance Sensor — is an active sensor that measures the distance to an object 
 
 ---
 ### `DistanceSensor(slot)`
-To create DistanceSensor object call `DistanceSensor(slot)`.
+To create a DistanceSensor object, call `DistanceSensor(slot)`.
 
 Also you can use short alias `Distance(slot)`.
 
@@ -20,7 +20,7 @@ You can choose any other slot (except `"C"`, as it does not support I2C communic
 - `slot (string | int | tuple)` - slot label ("A", "B", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``VL53L0X`` for *slot*.
+    Return a ``VL53L0X`` object for *slot*.
 ```python
 from pibody import DistanceSensor
 

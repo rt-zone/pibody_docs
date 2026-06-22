@@ -11,16 +11,16 @@ title: Датчик климата
 ### `ClimateSensor(slot)`
 Чтобы создать объект ClimateSensor, вызовите `ClimateSensor(slot)`.
 
-Также можно использовать короткий вызов `Climate(slot)`.
+Также можно использовать короткий псевдоним `Climate(slot)`.
 
 Вы можете выбрать любой другой слот (кроме `"C"`, так как он не поддерживает связь по I2C).
 
 **Аргументы:**
 
-- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.OUT)
+- `slot (string | int | tuple)` — метка слота ("A", "B", "D", "E", "F", "G", "H"), порт пина (0, 2 и т.д.), кортеж (0, Pin.IN)
 
 **Возвращает:**
-    Возвращает класс ``BME280`` для *slot*.
+    Возвращает объект ``BME280`` для *slot*.
 ```python
 from pibody import ClimateSensor
 
@@ -36,7 +36,7 @@ climate = ClimateSensor("A")
 - `pressure` — давление в гПа **[0, 20000]**
 
 ```python
-from pibody import Climate  # короткий вызов
+from pibody import Climate  # короткий псевдоним
 climate = Climate('A')
 
 data = climate.read() 

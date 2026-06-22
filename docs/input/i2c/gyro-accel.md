@@ -9,7 +9,7 @@ The Gyroscope and Accelerometer module is a tiny device that combines two import
 
 ---
 ### `GyroAccel(slot)`
-To create GyroAccel object call `GyroAccel(slot)`.
+To create a GyroAccel object, call `GyroAccel(slot)`.
 
 You can choose any other slot (except `"C"`, as it does not support I2C communication).
 
@@ -18,7 +18,7 @@ You can choose any other slot (except `"C"`, as it does not support I2C communic
 - `slot (string | int | tuple)` - slot label ("A", "B", "D", "E", "F", "G", "H"), pin port (0, 2 and etc.), tuple (0, Pin.OUT)
 
 **Returns:**
-    Return a class ``MPU6050`` for *slot*. In old PiBody kits may be ``LSM6DS3`` with deprecated functions.
+    Return a ``MPU6050`` object for *slot*. In old PiBody kits may be ``LSM6DS3`` with deprecated functions.
 ```python
 from pibody import GyroAccel
 
