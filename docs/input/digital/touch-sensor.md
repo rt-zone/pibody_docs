@@ -1,5 +1,14 @@
 ---
 title: Touch Sensor
+canonical: touch-sensor
+class_name: TouchSensor
+lesson_id: 36
+category: input
+subcategory: digital
+interface: digital
+aliases: [Touch]
+ports: [A, B, C, D, E, F]
+prompt_note: "digital input Pin (read/value)"
 ---
 # Touch Sensor
 Touch Sensor — is a button that detects the touch of a finger or a conductive object. Unlike mechanical buttons, it has no moving parts, making it more durable and reliable.

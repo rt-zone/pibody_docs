@@ -1,5 +1,12 @@
 ---
 title: LED Tower
+canonical: led-tower
+class_name: LEDTower
+lesson_id: 62
+category: output
+interface: GPIO
+ports: [G, H, 8, 9]
+prompt_note: "NeoPixel strip (write/fill)"
 ---
 # LED Tower
 LED Tower — is a strip consisting of 8 LEDs. Each LED can be controlled individually by changing its color. This module is perfect for creating indicators and light animations.

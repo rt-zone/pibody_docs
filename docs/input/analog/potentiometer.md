@@ -1,5 +1,14 @@
 ---
 title: Potentiometer
+canonical: potentiometer
+class_name: Potentiometer
+lesson_id: 39
+category: input
+subcategory: analog
+interface: ADC
+aliases: [Pot]
+ports: [C, F]
+prompt_note: "ADC input (read/read_u16)"
 ---
 # Potentiometer
 Potentiometer (variable resistor) is similar to a regular resistor, but its resistance can be adjusted. By turning the knob, you regulate the amount of resistance.

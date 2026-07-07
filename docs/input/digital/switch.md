@@ -1,5 +1,13 @@
 ---
 title: Switch
+canonical: switch
+class_name: Switch
+lesson_id: 34
+category: input
+subcategory: digital
+interface: digital
+ports: [A, B, C, D, E, F]
+prompt_note: "digital input Pin (read/value)"
 ---
 # Switch
 Switch - is a simple mechanism that controls the flow of electric current.

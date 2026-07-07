@@ -1,5 +1,12 @@
 ---
 title: WiFi
+canonical: wifi
+class_name: WiFi
+category: iot
+interface: UART
+ports: []
+built_in: true
+prompt_note: "WiFi connection (connect/get_time)"
 ---
 # WiFi
 The WiFi module allows connecting the PiBody to the internet over a Wi-Fi network. It provides functions to retrieve IoT-related information such as time, weather, exchange rates, and location.

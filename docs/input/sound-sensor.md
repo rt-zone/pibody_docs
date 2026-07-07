@@ -1,5 +1,13 @@
 ---
 title: Sound Sensor
+canonical: microphone
+class_name: SoundSensor
+lesson_id: 42
+category: input
+interface: analog
+aliases: [Sound]
+ports: [A, B, C, D, E, F]
+prompt_note: "digital+analog (read/read_digital); analog only on C or F, digital on any A-F"
 ---
 # Sound Sensor
 Sound Sensor converts sound into an electrical signal.

@@ -1,5 +1,14 @@
 ---
 title: Motion Sensor
+canonical: motion-detector
+class_name: MotionSensor
+lesson_id: 37
+category: input
+subcategory: digital
+interface: digital
+aliases: [Motion]
+ports: [A, B, C, D, E, F]
+prompt_note: "digital input Pin (read/value)"
 ---
 # Motion Sensor
 Motion Sensor - is a device that detects movement.

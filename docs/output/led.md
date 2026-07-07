@@ -1,5 +1,12 @@
 ---
 title: LED Control
+canonical: led
+class_name: LED
+lesson_id: 14
+category: output
+interface: GPIO
+ports: [A, B, C, D, E, F]
+prompt_note: "digital output Pin (on/off/toggle)"
 ---
 # LED
 The `pibody.LED()` factory function returns a `Pin` object configured as a digital output. Use it to drive an LED, a relay, or any on/off load connected to a PiBody slot.

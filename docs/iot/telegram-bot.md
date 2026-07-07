@@ -1,5 +1,12 @@
 ---
 title: Telegram Bot
+canonical: telegram-bot
+class_name: TelegramBot
+category: iot
+interface: UART
+ports: []
+built_in: true
+prompt_note: "Telegram (send_message/request_data)"
 ---
 # Telegram Bot
 Provides a basic Telegram Bot connection for your IoT projects. You need to obtain your own `API_TOKEN` from the official Telegram [BotFather](https://telegram.me/BotFather).

@@ -3,6 +3,11 @@ site_url: https://docs.artisan.education
 
 nav:
   - Home: index.md
+  - Hardware:
+    - PiBody: hardware/pibody.md
+    - Carrier board: hardware/carrier.md
+    - Ports & GPIO: hardware/ports.md
+    - Built-in components: hardware/built-in.md
   - Input:
     - Analog:
       - Light Sensor: input/analog/light-sensor.md

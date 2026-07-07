@@ -1,5 +1,14 @@
 ---
 title: Color Sensor
+canonical: color-sensor
+class_name: ColorSensor
+lesson_id: 48
+category: input
+subcategory: i2c
+interface: I2C
+aliases: [Color]
+ports: [A, B, D, E, F, G, H]
+prompt_note: "VEML6040 I2C (readRGB/lux/detectColor)"
 ---
 # Color Sensor
 Color Sensor — a high-precision device that measures the color of an object and the intensity of ambient light (similar to a light sensor). It determines the intensity of the 3 primary light spectra — red, green, and blue (RGB). Ideal for color detection and monitoring light intensity.

@@ -1,5 +1,14 @@
 ---
 title: Climate Sensor
+canonical: climate-sensor
+class_name: ClimateSensor
+lesson_id: 51
+category: input
+subcategory: i2c
+interface: I2C
+aliases: [Climate]
+ports: [A, B, D, E, F, G, H]
+prompt_note: "BME280 I2C (read_temperature/read_humidity)"
 ---
 # Climate Sensor
 Climate sensor is a smart device that can measure temperature, atmospheric pressure, and humidity.

@@ -1,5 +1,13 @@
 ---
 title: Gyro Accel
+canonical: gyro-accel
+class_name: GyroAccel
+lesson_id: 52
+category: input
+subcategory: i2c
+interface: I2C
+ports: [A, B, D, E, F, G, H]
+prompt_note: "MPU6050 I2C (read_accel/read_gyro)"
 ---
 # Gyro Accel
 The Gyroscope and Accelerometer module is a tiny device that combines two important sensors: a 3-axis accelerometer (measures linear motion) and a 3-axis gyroscope (measures rotation). It is widely used in robotics, drones, smartphones, and game controllers to detect motion and orientation.

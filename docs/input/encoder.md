@@ -1,5 +1,12 @@
 ---
 title: Encoder
+canonical: encoder
+class_name: Encoder
+lesson_id: 45
+category: input
+interface: GPIO
+ports: [A, B, C, D, E, F]
+prompt_note: "rotary encoder (read/bound/set_value)"
 ---
 # Encoder
 Encoder is a device that converts rotational movement into a digital signal. It is widely used in various applications — from kitchen appliances and volume knobs to cars and 3D printers.

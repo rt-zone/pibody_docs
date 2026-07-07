@@ -1,5 +1,12 @@
 ---
 title: Display
+canonical: display
+class_name: Display
+category: output
+interface: GPIO
+ports: []
+built_in: true
+prompt_note: "screen singleton (print/text/clear/fill/circle/rect)"
 ---
 # Display
 Singleton — always returns the same instance

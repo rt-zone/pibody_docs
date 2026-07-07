@@ -1,5 +1,12 @@
 ---
 title: Buzzer Control
+canonical: buzzer
+class_name: Buzzer
+lesson_id: 38
+category: output
+interface: PWM
+ports: [A, B, C, D, E, F]
+prompt_note: "PWM output (beep/boop/make_sound/on/off)"
 ---
 # Buzzer
 The `pibody.Buzzer()` is a device that produces sound when it receives a signal. Buzzers are commonly used in security systems, timers, and various electronic devices where an audible alert is needed.

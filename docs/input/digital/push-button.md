@@ -1,5 +1,13 @@
 ---
 title: Push Button
+canonical: push-button
+class_name: Button
+lesson_id: 35
+category: input
+subcategory: digital
+interface: digital
+ports: [A, B, C, D, E, F]
+prompt_note: "digital input Pin (read/value)"
 ---
 # Push Button
 A button is a simple switching mechanism used to control the flow of current. When the button is pressed, it closes the electrical circuit, allowing current to pass through.

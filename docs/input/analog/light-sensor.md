@@ -1,5 +1,14 @@
 ---
 title: Light Sensor
+canonical: light-sensor
+class_name: LightSensor
+lesson_id: 40
+category: input
+subcategory: analog
+interface: ADC
+aliases: [Light]
+ports: [C, F]
+prompt_note: "ADC input (read/read_u16)"
 ---
 # Light Sensor
 Light Sensor is an analog sensor capable of reading the level of light falling on it.

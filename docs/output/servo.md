@@ -1,5 +1,12 @@
 ---
 title: Servo
+canonical: servo
+class_name: Servo
+lesson_id: 63
+category: output
+interface: PWM
+ports: [8, 9, 12]
+prompt_note: "servo motor (angle/duty)"
 ---
 # Servo
 Servo motor — is a motor that can rotate to a specific set angle. Unlike a regular motor, it cannot spin freely (so you can’t make a fan or a car motor out of it), but with a microcontroller, you can precisely set the rotation angle of the servo drive with an accuracy of half a degree, and it will hold the set position.

@@ -1,5 +1,12 @@
 ---
 title: Joystick
+canonical: joystick
+class_name: Joystick
+lesson_id: 44
+category: input
+interface: analog
+ports: [F]
+prompt_note: "2-axis analog (read/read_x/read_y)"
 ---
 # Joystick
 Joystick is a small control lever that can be moved with your fingers. It is used in game controllers and robotics to move objects in different directions. Typically, it contains two potentiometers — one for left-right movement (X-axis) and one for up-down movement (Y-axis).

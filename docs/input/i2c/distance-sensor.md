@@ -1,5 +1,14 @@
 ---
 title: Distance Sensor
+canonical: distance-sensor
+class_name: DistanceSensor
+lesson_id: 53
+category: input
+subcategory: i2c
+interface: I2C
+aliases: [Distance]
+ports: [A, B, D, E, F, G, H]
+prompt_note: "VL53L0X I2C (read)"
 ---
 # Distance Sensor
 Distance Sensor — is an active sensor that measures the distance to an object with high precision. The sensor uses an infrared laser and records the time it takes for the laser to return back.

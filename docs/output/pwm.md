@@ -1,5 +1,11 @@
 ---
 title: PWM
+class_name: PWM
+category: output
+interface: PWM
+ports: [A, B, C, D, E, F]
+helper: true
+prompt_note: "PWM output (freq/duty/duty_u16)"
 ---
 # PWM
 PWM stands for Pulse Width Modulation. It may sound complicated, but it’s simply a smart way to control how much power is sent to devices like LEDs, buzzers, and servo motors.
