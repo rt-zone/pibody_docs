@@ -1,8 +1,8 @@
 ---
 title: LED Control
-canonical: led
+canonical: LED
 class_name: LED
-lesson_id: 14
+lesson_id: 9
 category: output
 interface: GPIO
 ports: [A, B, C, D, E, F]
