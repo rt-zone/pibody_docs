@@ -29,7 +29,7 @@
 | [`pibody.LED`](output/led.md) | Сандық шығыс пині (жарықдиодты басқару) |
 | [`pibody.Buzzer`](output/buzzer.md) | Пьезо дыбыстағыш / динамик |
 | [`pibody.LEDTower`](output/led-tower.md) | Мекенжайланатын RGB жарықдиодты лента |
-| [`pibody.Display`](output/display.md) | 320×240 OLED дисплей |
+| [`pibody.Display`](output/display.md) | 320×240 LCD дисплей |
 | [`pibody.Servo`](output/servo.md) | RC сервоқозғалтқыш |
 | [`pibody.PWM`](output/pwm.md) | Импульстік ендік модуляциясы (LED күңгірттеу, серво басқару) |
 | IoT |

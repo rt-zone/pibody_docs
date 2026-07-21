@@ -30,7 +30,7 @@ firmware library that provides a high-level API for all onboard and pluggable pe
 | [`pibody.LED`](output/led.md) | Digital output pin (drives an LED) |
 | [`pibody.Buzzer`](output/buzzer.md) | Piezo buzzer / speaker |
 | [`pibody.LEDTower`](output/led-tower.md) | Addressable RGB LED strip |
-| [`pibody.Display`](output/display.md) | 320×240 OLED display |
+| [`pibody.Display`](output/display.md) | 320×240 LCD display |
 | [`pibody.Servo`](output/servo.md) | RC servo motor |
 | [`pibody.PWM`](output/pwm.md) | Pulse-width modulation output (LED dimming, servo control) |
 | IOT |

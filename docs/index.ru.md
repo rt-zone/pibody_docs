@@ -29,7 +29,7 @@
 | [`pibody.LED`](output/led.md) | Цифровой выходной пин (управление светодиодом) |
 | [`pibody.Buzzer`](output/buzzer.md) | Пьезоизлучатель / динамик |
 | [`pibody.LEDTower`](output/led-tower.md) | Адресуемая RGB светодиодная лента |
-| [`pibody.Display`](output/display.md) | 320×240 OLED дисплей |
+| [`pibody.Display`](output/display.md) | 320×240 LCD дисплей |
 | [`pibody.Servo`](output/servo.md) | RC сервопривод |
 | [`pibody.PWM`](output/pwm.md) | Широтно-импульсная модуляция (диммирование LED, управление серво) |
 | IoT |
