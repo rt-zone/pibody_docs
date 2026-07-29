@@ -8,19 +8,14 @@ title: Дисплей
 ## Базовое использование
 
 ---
-### `Display()`
-Чтобы создать объект Display, вызовите `Display()`.
-
-```python
-from pibody import Display
-
-display = Display()
-```
-
-Также можно напрямую вызвать объект из библиотеки.
+### `display`
+Объект экрана создаётся при импорте. Импортируйте его и используйте напрямую — это **не** класс,
+поэтому никогда не пишите `display()` или `Display()`.
 
 ```python
 from pibody import display
+
+display.print("Hello")
 ```
 
 ---
@@ -34,8 +29,8 @@ from pibody import display
 **Аргументы:**
 
 - `*args (Any)` —
-- `font (Any)` — модуль шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_medium**
-- `color (Display.Color)` — цвет текста. По умолчанию: **Display.WHITE**
+- `font (Any)` — модуль шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_medium**
+- `color (Display.Color)` — цвет текста. По умолчанию: **display.WHITE**
 
 ```python
 display.print("Привет,", "Мир!")  # >> Привет, Мир!
@@ -50,9 +45,9 @@ display.print("Привет,", "Мир!")  # >> Привет, Мир!
 - `text (str | int | bytes)` — параметр для вывода
 - `x (int)` — позиция колонки текста
 - `y (int)` — позиция строки текста
-- `font (Any)` — модуль шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_small**
-- `fg (Display.Color)` — цвет текста. По умолчанию: **Display.WHITE**
-- `bg (Display.Color)` — цвет фона текста. По умолчанию: **Display.BLACK**
+- `font (Any)` — модуль шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_small**
+- `fg (Display.Color)` — цвет текста. По умолчанию: **display.WHITE**
+- `bg (Display.Color)` — цвет фона текста. По умолчанию: **display.BLACK**
 
 ```python
 display.text("PiBody", 50, 50, font = font_bold)  # PiBody
@@ -78,7 +73,7 @@ display.clear()
 - `color (Display.Color)` — введите предустановленный цвет или укажите свой.
 
 ```python
-display.fill(Display.WHITE)
+display.fill(display.WHITE)
 ```
 
 ---
@@ -92,7 +87,7 @@ display.fill(Display.WHITE)
 - `color (Display.Color)` — цвет пикселя
 
 ```python
-display.pixel(10, 10, Display.WHITE)
+display.pixel(10, 10, display.WHITE)
 ```
 
 ---
@@ -108,7 +103,7 @@ display.pixel(10, 10, Display.WHITE)
 - `color (Display.Color)` — цвет линии
 
 ```python
-display.line(10, 10, 20, 20, Display.BLUE)
+display.line(10, 10, 20, 20, display.BLUE)
 ```
 
 ---
@@ -123,7 +118,7 @@ display.line(10, 10, 20, 20, Display.BLUE)
 - `color (Display.Color)` — цвет линии
 
 ```python
-display.hline(10, 10, 15, Display.BLACK)
+display.hline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -138,7 +133,7 @@ display.hline(10, 10, 15, Display.BLACK)
 - `color (Display.Color)` — цвет линии
 
 ```python
-display.vline(10, 10, 15, Display.BLACK)
+display.vline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -154,12 +149,12 @@ display.vline(10, 10, 15, Display.BLACK)
 - `x_center (int)` — X опорной точки левого центра
 - `y_center (int)` — Y опорной точки левого центра
 - `crosshair_radius (int)` — внутренний радиус в пикселях
-- `color (Display.Color | None)` — основной цвет перекрестия. По умолчанию: **Display.RED**
-- `border_color (Display.Color | None)` — цвет границы. По умолчанию: **Display.WHITE**
-- `background_color (Display.Color | None)` — цвет фона. По умолчанию: **Display.BLACK**
+- `color (Display.Color | None)` — основной цвет перекрестия. По умолчанию: **display.RED**
+- `border_color (Display.Color | None)` — цвет границы. По умолчанию: **display.WHITE**
+- `background_color (Display.Color | None)` — цвет фона. По умолчанию: **display.BLACK**
 
 ```python
-display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
+display.crosshair(50, 50, 20, 0, 0, 5, background_color = display.GREEN)
 ```
 
 ---
@@ -175,7 +170,7 @@ display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
 - `color (Display.Color)` — цвет границы прямоугольника
 
 ```python
-display.rect(50, 50, 10, 20, Display.GREEN)
+display.rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -191,7 +186,7 @@ display.rect(50, 50, 10, 20, Display.GREEN)
 - `color (Display.Color)` — цвет заливки прямоугольника
 
 ```python
-display.fill_rect(50, 50, 10, 20, Display.GREEN)
+display.fill_rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -206,7 +201,7 @@ display.fill_rect(50, 50, 10, 20, Display.GREEN)
 - `color (Display.Color)` — цвет границы окружности
 
 ```python
-display.circle(50, 50, 10, Display.GREEN)
+display.circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -221,7 +216,7 @@ display.circle(50, 50, 10, Display.GREEN)
 - `color (Display.Color)` — цвет заливки
 
 ```python
-display.fill_circle(50, 50, 10, Display.GREEN)
+display.fill_circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -257,11 +252,11 @@ display.arc(display.WHITE, 50, 50, 20)
 - `n (int)` — количество сторон
 - `bump (float | None)` — коэффициент выпуклости края относительно r (1.0 = плоский). По умолчанию: **1.0**
 - `angle_offset (float | None)` — смещение поворота в градусах; вычисляется автоматически, если None. По умолчанию: **None**
-- `color (Display.Color | None)` — цвет контура / заливки. По умолчанию: **Display.WHITE**
+- `color (Display.Color | None)` — цвет контура / заливки. По умолчанию: **display.WHITE**
 - `fill (bool | None)` — залитый полигон, если **True**, только контур, если **False**. По умолчанию: **False**
 
 ```python
-display.draw_polygon(50, 50, 20, 4, color = Display.GREEN)
+display.draw_polygon(50, 50, 20, 4, color = display.GREEN)
 ```
 
 ---
@@ -297,7 +292,7 @@ print(center_x, center_y)
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.polygon(poly, 0, 0, Display.RED, angle = 45)
+display.polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -317,7 +312,7 @@ display.polygon(poly, 0, 0, Display.RED, angle = 45)
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.fill_polygon(poly, 0, 0, Display.RED, angle = 45)
+display.fill_polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -386,7 +381,7 @@ display.bitmap(bitmap, 0, 0)
 - `jpg (str | bytes | bytearray)` — может быть строкой имени файла или буфером, содержащим данные JPEG
 - `x (int)` — верхняя левая колонка
 - `y (int)` — верхняя левая строка
-- `method (int)` — метод рендеринга. Используйте **Display.SLOW** для изображений, превышающих доступную свободную RAM. По умолчанию: **Display.FAST**
+- `method (int)` — метод рендеринга. Используйте **display.SLOW** для изображений, превышающих доступную свободную RAM. По умолчанию: **display.FAST**
 
 ```python
 display.jpg("dog.jpg", 0, 0)
@@ -434,13 +429,13 @@ display.png("dog.jpg", 0, 0, mask = True)
 
 **Аргументы:**
 
-- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_medium**
+- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_medium**
 - `s (str)` — отображаемый текст
 - `x (int)` — позиция колонки текста
 - `y (int)` — позиция строки текста
 
 ```python
-display.write(Display.font_medium, "Привет", 10, 10)
+display.write(display.font_medium, "Привет", 10, 10)
 ```
 
 ---
@@ -449,11 +444,11 @@ display.write(Display.font_medium, "Привет", 10, 10)
 
 **Аргументы:**
 
-- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_medium**
+- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_medium**
 - `s (str)` — отображаемый текст
 
 ```python
-length = display.write_len(Display.font_medium, "PiBody")
+length = display.write_len(display.font_medium, "PiBody")
 print(length)
 ```
 
@@ -463,15 +458,15 @@ print(length)
 
 **Аргументы:**
 
-- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_medium**
+- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_medium**
 - `s (str)` — отображаемый текст
 - `x (int)` — нижняя левая колонка
 - `y (int)` — нижняя левая строка
-- `fg (Display.Color | None)` — цвет текста. По умолчанию: **Display.WHITE**
+- `fg (Display.Color | None)` — цвет текста. По умолчанию: **display.WHITE**
 - `scale (float | None)` — масштаб. По умолчанию: **1.0**
 
 ```python
-display.draw(Display.font_medium, "PiBody", 15, 15)
+display.draw(display.font_medium, "PiBody", 15, 15)
 ```
 
 ---
@@ -480,12 +475,12 @@ display.draw(Display.font_medium, "PiBody", 15, 15)
 
 **Аргументы:**
 
-- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **Display.font_medium**
+- `font (Any)` — модуль bitmap шрифта: **font_small**, **font_medium**, **font_large** или **font_bold**. По умолчанию: **display.font_medium**
 - `s (str)` — отображаемый текст
 - `scale (float | None)` — масштаб. По умолчанию: **1.0**
 
 ```python
-length = display.draw_len(Display.font_medium, "PiBody", 15, 15)
+length = display.draw_len(display.font_medium, "PiBody", 15, 15)
 print(length)
 ```
 
@@ -506,9 +501,9 @@ print(length)
 - `length (int | None)` — общая длина индикатора в пикселях. По умолчанию: **100**
 - `height (int | None)` — высота индикатора в пикселях. По умолчанию: **5**
 - `border (bool | None)` — если `True`, рисует прямоугольную границу и заливает пустую область; если **False**, рисует конечные колпачки и центральную линию. По умолчанию: **False**
-- `bar_color (Display.Color | None)` — цвет заполненной части. По умолчанию: **Display.GREEN**
-- `border_color (Display.Color | None)` — цвет границы / колпачков / центральной линии. По умолчанию: **Display.WHITE**
-- `background_color (Display.Color | None)` — цвет незаполненной части. По умолчанию: **Display.BLACK**
+- `bar_color (Display.Color | None)` — цвет заполненной части. По умолчанию: **display.GREEN**
+- `border_color (Display.Color | None)` — цвет границы / колпачков / центральной линии. По умолчанию: **display.WHITE**
+- `background_color (Display.Color | None)` — цвет незаполненной части. По умолчанию: **display.BLACK**
 
 ```python
 display.linear_bar(50, 50, 5, 0, 10)
@@ -529,8 +524,8 @@ display.linear_bar(50, 50, 5, 0, 10)
 - `min_value (float)` — значение, соответствующее пустому индикатору
 - `max_value (float)` — значение, соответствующее полному индикатору
 - `width (int | None)` — радиальная толщина в пикселях. По умолчанию: **2**
-- `color (Display.Color | None)` — цвет заполненной части. По умолчанию: **Display.GREEN**
-- `background_color (Display.Color | None)` — цвет незаполненной части. По умолчанию: **Display.WHITE**
+- `color (Display.Color | None)` — цвет заполненной части. По умолчанию: **display.GREEN**
+- `background_color (Display.Color | None)` — цвет незаполненной части. По умолчанию: **display.WHITE**
 
 ```python
 display.circular_bar(50, 50, 20, 5, 0, 10)
@@ -674,11 +669,11 @@ display.madctl()
 
 | Имя | Описание |
 |---|---|
-| <span style="color: #000000; font-weight: bold;">Display.BLACK</span>   | чистый чёрный |
-| <span style="color: #0000FF; font-weight: bold;">Display.BLUE</span>    | синий |
-| <span style="color: #FF0000; font-weight: bold;">Display.RED</span>     | красный |
-| <span style="color: #00FF00; font-weight: bold;">Display.GREEN</span>   | зелёный |
-| <span style="color: #00FFFF; font-weight: bold;">Display.CYAN</span>    | голубой |
-| <span style="color: #FF00FF; font-weight: bold;">Display.MAGENTA</span> | пурпурный |
-| <span style="color: #FFFF00; font-weight: bold;">Display.YELLOW</span>  | жёлтый |
-| <span style="color: #FFFFFF; font-weight: bold;">Display.WHITE</span>   | чистый белый |
+| <span style="color: #000000; font-weight: bold;">display.BLACK</span>   | чистый чёрный |
+| <span style="color: #0000FF; font-weight: bold;">display.BLUE</span>    | синий |
+| <span style="color: #FF0000; font-weight: bold;">display.RED</span>     | красный |
+| <span style="color: #00FF00; font-weight: bold;">display.GREEN</span>   | зелёный |
+| <span style="color: #00FFFF; font-weight: bold;">display.CYAN</span>    | голубой |
+| <span style="color: #FF00FF; font-weight: bold;">display.MAGENTA</span> | пурпурный |
+| <span style="color: #FFFF00; font-weight: bold;">display.YELLOW</span>  | жёлтый |
+| <span style="color: #FFFFFF; font-weight: bold;">display.WHITE</span>   | чистый белый |

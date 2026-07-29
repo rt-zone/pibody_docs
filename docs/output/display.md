@@ -6,7 +6,8 @@ category: output
 interface: GPIO
 ports: []
 built_in: true
-prompt_note: "screen singleton (print/text/clear/fill/circle/rect)"
+singleton: true
+prompt_note: "screen singleton — import as 'display', never call display()"
 ---
 # Display
 Singleton — always returns the same instance
@@ -15,19 +16,14 @@ Singleton — always returns the same instance
 ## Basic usage
 
 ---
-### `Display()`
-To create a Display object, call `Display()`.
-
-```python
-from pibody import Display
-
-display = Display()
-```
-
-Also you can directly call object from library.
+### `display`
+The screen object is created for you on import. Import it and use it directly — it is **not** a
+class, so never write `display()` or `Display()`.
 
 ```python
 from pibody import display
+
+display.print("Hello")
 ```
 
 ---
@@ -41,8 +37,8 @@ Long lines are wrapped to fit the display width.
 **Args:**
 
 - `*args (Any)` - 
-- `font (Any)` - text font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
-- `color (Display.Color)` - text foreground colour. Default is **Display.WHITE**
+- `font (Any)` - text font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_medium**
+- `color (Display.Color)` - text foreground colour. Default is **display.WHITE**
 
 ```python
 display.print("Hello,", "World!")  # >> Hello, World!
@@ -57,9 +53,9 @@ Write *text* at (x, y) using *font*.
 - `text (str | int | bytes)` - parameter to print
 - `x (int)` - text column position
 - `y (int)` - text row position
-- `font (Any)` - test font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_small**
-- `fg (Display.Color)` - text foreground colour. Default is **Display.WHITE**
-- `bg (Display.Color)` - text background colour. Default is **Display.BLACK**
+- `font (Any)` - test font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_small**
+- `fg (Display.Color)` - text foreground colour. Default is **display.WHITE**
+- `bg (Display.Color)` - text background colour. Default is **display.BLACK**
 
 ```python
 display.text("PiBody", 50, 50, font = font_bold)  # PiBody
@@ -85,7 +81,7 @@ Fill the entire display with *color*.
 - `color (Display.Color)` - enter preset color, or input own
 
 ```python
-display.fill(Display.WHITE)
+display.fill(display.WHITE)
 ```
 
 ---
@@ -99,7 +95,7 @@ Set a single pixel at (x, y) to *color*.
 - `color (Display.Color)` - pixel colour
 
 ```python
-display.pixel(10, 10, Display.WHITE)
+display.pixel(10, 10, display.WHITE)
 ```
 
 ---
@@ -115,7 +111,7 @@ Draw a line from (x0, y0) to (x1, y1) in *color*.
 - `color (Display.Color)` - line colour
 
 ```python
-display.line(10, 10, 20, 20, Display.BLUE)
+display.line(10, 10, 20, 20, display.BLUE)
 ```
 
 ---
@@ -130,7 +126,7 @@ Draw a fast horizontal line of *length* pixels starting at (x, y).
 - `color (Display.Color)` - line colour
 
 ```python
-display.hline(10, 10, 15, Display.BLACK)
+display.hline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -145,7 +141,7 @@ Draw a fast vertical line of *length* pixels starting at (x, y).
 - `color (Display.Color)` - line colour
 
 ```python
-display.vline(10, 10, 15, Display.BLACK)
+display.vline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -161,12 +157,12 @@ x, y cords are relative and range from -1 to 1, where 0 is the middle of the cro
 - `x_center (int)` - left-centre anchor point's X
 - `y_center (int)` - left-centre anchor point's Y
 - `crosshair_radius (int)` - inner radius in pixels
-- `color (Display.Color | None)` - primary color of crosshair. Default is **Display.RED**
-- `border_color (Display.Color | None)` - colour of the border. Default is **Display.WHITE**
-- `background_color (Display.Color | None)` - background color. Default is **Display.BLACK**
+- `color (Display.Color | None)` - primary color of crosshair. Default is **display.RED**
+- `border_color (Display.Color | None)` - colour of the border. Default is **display.WHITE**
+- `background_color (Display.Color | None)` - background color. Default is **display.BLACK**
 
 ```python
-display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
+display.crosshair(50, 50, 20, 0, 0, 5, background_color = display.GREEN)
 ```
 
 ---
@@ -182,7 +178,7 @@ Draw a rectangle outline with the top-left corner at (x, y).
 - `color (Display.Color)` - colour of rectangle's border
 
 ```python
-display.rect(50, 50, 10, 20, Display.GREEN)
+display.rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -198,7 +194,7 @@ Draw a filled rectangle with the top-left corner at (x, y).
 - `color (Display.Color)` - color of full rectangle
 
 ```python
-display.fill_rect(50, 50, 10, 20, Display.GREEN)
+display.fill_rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -213,7 +209,7 @@ Draw a circle outline centred at (x, y) with radius *r*.
 - `color (Display.Color)` - color of circle's border
 
 ```python
-display.circle(50, 50, 10, Display.GREEN)
+display.circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -228,7 +224,7 @@ Draw a filled circle centred at (x, y) with radius *r*.
 - `color (Display.Color)` - fill color
 
 ```python
-display.fill_circle(50, 50, 10, Display.GREEN)
+display.fill_circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -264,11 +260,11 @@ Draw a regular *n*-sided polygon with optional mid-edge bulge.
 - `n (int)` - number of sides
 - `bump (float | None)` - mid-edge bulge factor relative to r (1.0 = flat). Default is **1.0**
 - `angle_offset (float | None)` - rotation offset in degrees; auto-computed if None. Default is **None**
-- `color (Display.Color | None)` - outline / fill colour. Default is **Display.WHITE**
+- `color (Display.Color | None)` - outline / fill colour. Default is **display.WHITE**
 - `fill (bool | None)` - filled polygon if **True**, outline only if **False**. Default is **False**
 
 ```python
-display.draw_polygon(50, 50, 20, 4, color = Display.GREEN)
+display.draw_polygon(50, 50, 20, 4, color = display.GREEN)
 ```
 
 ---
@@ -304,7 +300,7 @@ Draw a polygon outline translated to (x, y), optionally rotated *angle* radians 
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.polygon(poly, 0, 0, Display.RED, angle = 45)
+display.polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -324,7 +320,7 @@ Draw a filled polygon translated to (x, y), optionally rotated *angle* radians a
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.fill_polygon(poly, 0, 0, Display.RED, angle = 45)
+display.fill_polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -393,7 +389,7 @@ Draw a JPEG at (x, y).
 - `jpg (str | bytes | bytearray)` - may be a filename string or a buffer containing JPEG data
 - `x (int)` - top-left column
 - `y (int)` - top-left row
-- `method (int)` - render method. Use **Display.SLOW** for images that exceed available free RAM. Default is **Display.FAST**
+- `method (int)` - render method. Use **display.SLOW** for images that exceed available free RAM. Default is **display.FAST**
 
 ```python
 display.jpg("dog.jpg", 0, 0)
@@ -441,13 +437,13 @@ Returns the `width` of the rendered string in pixels.
 
 **Args:**
 
-- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_medium**
 - `s (str)` - text to be showed
 - `x (int)` - text column position
 - `y (int)` - text row position
 
 ```python
-display.write(Display.font_medium, "Hello", 10, 10)
+display.write(display.font_medium, "Hello", 10, 10)
 ```
 
 ---
@@ -456,11 +452,11 @@ Return the pixel length of *s* when rendered with *font*. *proportional / TrueTy
 
 **Args:**
 
-- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_medium**
 - `s (str)` - text to be showed
 
 ```python
-length = display.write_len(Display.font_medium, "PiBody")
+length = display.write_len(display.font_medium, "PiBody")
 print(length)
 ```
 
@@ -470,15 +466,15 @@ Draw *s* using a Hershey vector *font* with (x, y) as the *lower-left* corner of
 
 **Args:**
 
-- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_medium**
 - `s (str)` - text to be showed
 - `x (int)` - lower-left column
 - `y (int)` - lower-left row
-- `fg (Display.Color | None)` - text foreground colour. Default is **Display.WHITE**
+- `fg (Display.Color | None)` - text foreground colour. Default is **display.WHITE**
 - `scale (float | None)` - scale. Default is **1.0**
 
 ```python
-display.draw(Display.font_medium, "PiBody", 15, 15)
+display.draw(display.font_medium, "PiBody", 15, 15)
 ```
 
 ---
@@ -487,12 +483,12 @@ Return the pixel length of *s* when drawn with *font* at *scale*. *Hershey vecto
 
 **Args:**
 
-- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **Display.font_medium**
+- `font (Any)` - bitmap font module: **font_small**, **font_medium**, **font_large** or **font_bold**. Default is **display.font_medium**
 - `s (str)` - text to be showed
 - `scale (float | None)` - scale. Default is **1.0**
 
 ```python
-length = display.draw_len(Display.font_medium, "PiBody", 15, 15)
+length = display.draw_len(display.font_medium, "PiBody", 15, 15)
 print(length)
 ```
 
@@ -513,9 +509,9 @@ Draw a horizontal progress bar centred vertically on *y*.
 - `length (int | None)` - total bar length in pixels. Default is **100**
 - `height (int | None)` - bar height in pixels. Default is **5**
 - `border (bool | None)` - = if `True`, draw a rectangular border and flood the empty region; if **False**, draw end caps and a centre line instead. Default is **False**
-- `bar_color (Display.Color | None)` - colour of the filled portion. Default is **Display.GREEN**
-- `border_color (Display.Color | None)` - colour of the border / end caps / centre line. Default is **Display.WHITE**
-- `background_color (Display.Color | None)` - colour of the unfilled portion. Default is **Display.BLACK**
+- `bar_color (Display.Color | None)` - colour of the filled portion. Default is **display.GREEN**
+- `border_color (Display.Color | None)` - colour of the border / end caps / centre line. Default is **display.WHITE**
+- `background_color (Display.Color | None)` - colour of the unfilled portion. Default is **display.BLACK**
 
 ```python
 display.linear_bar(50, 50, 5, 0, 10)
@@ -536,8 +532,8 @@ The filled arc (from -90° to the computed angle) is drawn in *color*; the remai
 - `min_value (float)` - value that corresponds to an empty bar
 - `max_value (float)` - value that corresponds to a full bar
 - `width (int | None)` - radial thickness in pixels. Default **2**
-- `color (display.Color | None)` - colour of the filled portion. Default is **Display.GREEN**
-- `background_color (display.Color | None)` - colour of the unfilled portion. Default is **Display.WHITE**
+- `color (display.Color | None)` - colour of the filled portion. Default is **display.GREEN**
+- `background_color (display.Color | None)` - colour of the unfilled portion. Default is **display.WHITE**
 
 ```python
 display.circular_bar(50, 50, 20, 5, 0, 10)
@@ -681,11 +677,11 @@ display.madctl()
 
 | Name | Description |
 |---|---|
-| <span style="color: #000000; font-weight: bold;">Display.BLACK</span>   | pure black |
-| <span style="color: #0000FF; font-weight: bold;">Display.BLUE</span>    | blue |
-| <span style="color: #FF0000; font-weight: bold;">Display.RED</span>     | red |
-| <span style="color: #00FF00; font-weight: bold;">Display.GREEN</span>   | green |
-| <span style="color: #00FFFF; font-weight: bold;">Display.CYAN</span>    | cyan |
-| <span style="color: #FF00FF; font-weight: bold;">Display.MAGENTA</span> | magenta |
-| <span style="color: #FFFF00; font-weight: bold;">Display.YELLOW</span>  | yellow |
-| <span style="color: #FFFFFF; font-weight: bold;">Display.WHITE</span>   | pure white |
+| <span style="color: #000000; font-weight: bold;">display.BLACK</span>   | pure black |
+| <span style="color: #0000FF; font-weight: bold;">display.BLUE</span>    | blue |
+| <span style="color: #FF0000; font-weight: bold;">display.RED</span>     | red |
+| <span style="color: #00FF00; font-weight: bold;">display.GREEN</span>   | green |
+| <span style="color: #00FFFF; font-weight: bold;">display.CYAN</span>    | cyan |
+| <span style="color: #FF00FF; font-weight: bold;">display.MAGENTA</span> | magenta |
+| <span style="color: #FFFF00; font-weight: bold;">display.YELLOW</span>  | yellow |
+| <span style="color: #FFFFFF; font-weight: bold;">display.WHITE</span>   | pure white |

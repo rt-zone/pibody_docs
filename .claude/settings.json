@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/skills/artisan-ecosystem/scripts/check-version.sh\" 2>/dev/null || echo 'IMPORTANT - tell the user at the start of your first reply: the artisan-ecosystem skill is not installed. Install it: npx skills add git@github.com:Artisan-education/artisan-skills.git --skill artisan-ecosystem -g'"
+          }
+        ]
+      }
+    ]
+  }
+}

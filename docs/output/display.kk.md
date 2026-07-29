@@ -8,19 +8,14 @@ Singleton — әрқашан бірдей дананы қайтарады.
 ## Негізгі қолдану
 
 ---
-### `Display()`
-Display объектісін жасау үшін `Display()` шақырыңыз.
-
-```python
-from pibody import Display
-
-display = Display()
-```
-
-Сондай-ақ объектіні кітапханадан тікелей шақыруға болады.
+### `display`
+Экран объектісі импорт кезінде жасалады. Оны импорттап, тікелей қолданыңыз — бұл класс **емес**,
+сондықтан `display()` немесе `Display()` деп ешқашан жазбаңыз.
 
 ```python
 from pibody import display
+
+display.print("Hello")
 ```
 
 ---
@@ -34,8 +29,8 @@ from pibody import display
 **Аргументтер:**
 
 - `*args (Any)` —
-- `font (Any)` — мәтіндік қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_medium**
-- `color (Display.Color)` — мәтін түсі. Әдепкі: **Display.WHITE**
+- `font (Any)` — мәтіндік қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_medium**
+- `color (Display.Color)` — мәтін түсі. Әдепкі: **display.WHITE**
 
 ```python
 display.print("Сәлем,", "Әлем!")  # >> Сәлем, Әлем!
@@ -50,9 +45,9 @@ display.print("Сәлем,", "Әлем!")  # >> Сәлем, Әлем!
 - `text (str | int | bytes)` — шығарылатын параметр
 - `x (int)` — мәтін бағанының позициясы
 - `y (int)` — мәтін жолының позициясы
-- `font (Any)` — қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_small**
-- `fg (Display.Color)` — мәтін түсі. Әдепкі: **Display.WHITE**
-- `bg (Display.Color)` — мәтін фонының түсі. Әдепкі: **Display.BLACK**
+- `font (Any)` — қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_small**
+- `fg (Display.Color)` — мәтін түсі. Әдепкі: **display.WHITE**
+- `bg (Display.Color)` — мәтін фонының түсі. Әдепкі: **display.BLACK**
 
 ```python
 display.text("PiBody", 50, 50, font = font_bold)  # PiBody
@@ -78,7 +73,7 @@ display.clear()
 - `color (Display.Color)` — алдын ала орнатылған түсті енгізіңіз немесе өзіңіздікін көрсетіңіз.
 
 ```python
-display.fill(Display.WHITE)
+display.fill(display.WHITE)
 ```
 
 ---
@@ -92,7 +87,7 @@ display.fill(Display.WHITE)
 - `color (Display.Color)` — пиксел түсі
 
 ```python
-display.pixel(10, 10, Display.WHITE)
+display.pixel(10, 10, display.WHITE)
 ```
 
 ---
@@ -108,7 +103,7 @@ display.pixel(10, 10, Display.WHITE)
 - `color (Display.Color)` — сызық түсі
 
 ```python
-display.line(10, 10, 20, 20, Display.BLUE)
+display.line(10, 10, 20, 20, display.BLUE)
 ```
 
 ---
@@ -123,7 +118,7 @@ display.line(10, 10, 20, 20, Display.BLUE)
 - `color (Display.Color)` — сызық түсі
 
 ```python
-display.hline(10, 10, 15, Display.BLACK)
+display.hline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -138,7 +133,7 @@ display.hline(10, 10, 15, Display.BLACK)
 - `color (Display.Color)` — сызық түсі
 
 ```python
-display.vline(10, 10, 15, Display.BLACK)
+display.vline(10, 10, 15, display.BLACK)
 ```
 
 ---
@@ -154,12 +149,12 @@ x, y координаттары салыстырмалы және -1 мен 1 а
 - `x_center (int)` — сол-орта тірек нүктесінің X
 - `y_center (int)` — сол-орта тірек нүктесінің Y
 - `crosshair_radius (int)` — ішкі радиус пикселмен
-- `color (Display.Color | None)` — көздеуіштің негізгі түсі. Әдепкі: **Display.RED**
-- `border_color (Display.Color | None)` — жиек түсі. Әдепкі: **Display.WHITE**
-- `background_color (Display.Color | None)` — фон түсі. Әдепкі: **Display.BLACK**
+- `color (Display.Color | None)` — көздеуіштің негізгі түсі. Әдепкі: **display.RED**
+- `border_color (Display.Color | None)` — жиек түсі. Әдепкі: **display.WHITE**
+- `background_color (Display.Color | None)` — фон түсі. Әдепкі: **display.BLACK**
 
 ```python
-display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
+display.crosshair(50, 50, 20, 0, 0, 5, background_color = display.GREEN)
 ```
 
 ---
@@ -175,7 +170,7 @@ display.crosshair(50, 50, 20, 0, 0, 5, background_color = Display.GREEN)
 - `color (Display.Color)` — тіктөртбұрыш жиегінің түсі
 
 ```python
-display.rect(50, 50, 10, 20, Display.GREEN)
+display.rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -191,7 +186,7 @@ display.rect(50, 50, 10, 20, Display.GREEN)
 - `color (Display.Color)` — толтыру түсі
 
 ```python
-display.fill_rect(50, 50, 10, 20, Display.GREEN)
+display.fill_rect(50, 50, 10, 20, display.GREEN)
 ```
 
 ---
@@ -206,7 +201,7 @@ display.fill_rect(50, 50, 10, 20, Display.GREEN)
 - `color (Display.Color)` — шеңбер жиегінің түсі
 
 ```python
-display.circle(50, 50, 10, Display.GREEN)
+display.circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -221,7 +216,7 @@ display.circle(50, 50, 10, Display.GREEN)
 - `color (Display.Color)` — толтыру түсі
 
 ```python
-display.fill_circle(50, 50, 10, Display.GREEN)
+display.fill_circle(50, 50, 10, display.GREEN)
 ```
 
 ---
@@ -257,11 +252,11 @@ display.arc(display.WHITE, 50, 50, 20)
 - `n (int)` — қабырғалар саны
 - `bump (float | None)` — r-ге қатысты жиектің дөңестік коэффициенті (1.0 = жазық). Әдепкі: **1.0**
 - `angle_offset (float | None)` — градустағы бұрылу ығысуы; None болса автоматты түрде есептеледі. Әдепкі: **None**
-- `color (Display.Color | None)` — контур/толтыру түсі. Әдепкі: **Display.WHITE**
+- `color (Display.Color | None)` — контур/толтыру түсі. Әдепкі: **display.WHITE**
 - `fill (bool | None)` — **True** болса толтырылған көпбұрыш, **False** болса тек контур. Әдепкі: **False**
 
 ```python
-display.draw_polygon(50, 50, 20, 4, color = Display.GREEN)
+display.draw_polygon(50, 50, 20, 4, color = display.GREEN)
 ```
 
 ---
@@ -297,7 +292,7 @@ print(center_x, center_y)
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.polygon(poly, 0, 0, Display.RED, angle = 45)
+display.polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -317,7 +312,7 @@ display.polygon(poly, 0, 0, Display.RED, angle = 45)
 ```python
 poly = [(0, 0), (10, 0), (10, 10), (0, 10)]
 
-display.fill_polygon(poly, 0, 0, Display.RED, angle = 45)
+display.fill_polygon(poly, 0, 0, display.RED, angle = 45)
 ```
 
 ---
@@ -386,7 +381,7 @@ display.bitmap(bitmap, 0, 0)
 - `jpg (str | bytes | bytearray)` — файл атауының жолы немесе JPEG деректері бар буфер болуы мүмкін
 - `x (int)` — жоғарғы сол жақ баған
 - `y (int)` — жоғарғы сол жақ жол
-- `method (int)` — рендеринг әдісі. Бос RAM-нан асатын суреттер үшін **Display.SLOW** пайдаланыңыз. Әдепкі: **Display.FAST**
+- `method (int)` — рендеринг әдісі. Бос RAM-нан асатын суреттер үшін **display.SLOW** пайдаланыңыз. Әдепкі: **display.FAST**
 
 ```python
 display.jpg("dog.jpg", 0, 0)
@@ -434,13 +429,13 @@ display.png("dog.jpg", 0, 0, mask = True)
 
 **Аргументтер:**
 
-- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_medium**
+- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_medium**
 - `s (str)` — көрсетілетін мәтін
 - `x (int)` — мәтін бағанының позициясы
 - `y (int)` — мәтін жолының позициясы
 
 ```python
-display.write(Display.font_medium, "Сәлем", 10, 10)
+display.write(display.font_medium, "Сәлем", 10, 10)
 ```
 
 ---
@@ -449,11 +444,11 @@ display.write(Display.font_medium, "Сәлем", 10, 10)
 
 **Аргументтер:**
 
-- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_medium**
+- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_medium**
 - `s (str)` — көрсетілетін мәтін
 
 ```python
-length = display.write_len(Display.font_medium, "PiBody")
+length = display.write_len(display.font_medium, "PiBody")
 print(length)
 ```
 
@@ -463,15 +458,15 @@ print(length)
 
 **Аргументтер:**
 
-- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_medium**
+- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_medium**
 - `s (str)` — көрсетілетін мәтін
 - `x (int)` — төменгі сол жақ баған
 - `y (int)` — төменгі сол жақ жол
-- `fg (Display.Color | None)` — мәтін түсі. Әдепкі: **Display.WHITE**
+- `fg (Display.Color | None)` — мәтін түсі. Әдепкі: **display.WHITE**
 - `scale (float | None)` — масштаб. Әдепкі: **1.0**
 
 ```python
-display.draw(Display.font_medium, "PiBody", 15, 15)
+display.draw(display.font_medium, "PiBody", 15, 15)
 ```
 
 ---
@@ -480,12 +475,12 @@ display.draw(Display.font_medium, "PiBody", 15, 15)
 
 **Аргументтер:**
 
-- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **Display.font_medium**
+- `font (Any)` — bitmap қаріп модулі: **font_small**, **font_medium**, **font_large** немесе **font_bold**. Әдепкі: **display.font_medium**
 - `s (str)` — көрсетілетін мәтін
 - `scale (float | None)` — масштаб. Әдепкі: **1.0**
 
 ```python
-length = display.draw_len(Display.font_medium, "PiBody", 15, 15)
+length = display.draw_len(display.font_medium, "PiBody", 15, 15)
 print(length)
 ```
 
@@ -506,9 +501,9 @@ print(length)
 - `length (int | None)` — жолақтың жалпы ұзындығы пикселмен. Әдепкі: **100**
 - `height (int | None)` — жолақ биіктігі пикселмен. Әдепкі: **5**
 - `border (bool | None)` — **True** болса, тіктөртбұрышты жиек жүргізіп, бос аймақты толтырады; **False** болса, шеткі қақпақтар мен центр сызығын жүргізеді. Әдепкі: **False**
-- `bar_color (Display.Color | None)` — толтырылған бөліктің түсі. Әдепкі: **Display.GREEN**
-- `border_color (Display.Color | None)` — жиек/шеткі қақпақтар/центр сызығының түсі. Әдепкі: **Display.WHITE**
-- `background_color (Display.Color | None)` — толтырылмаған бөліктің түсі. Әдепкі: **Display.BLACK**
+- `bar_color (Display.Color | None)` — толтырылған бөліктің түсі. Әдепкі: **display.GREEN**
+- `border_color (Display.Color | None)` — жиек/шеткі қақпақтар/центр сызығының түсі. Әдепкі: **display.WHITE**
+- `background_color (Display.Color | None)` — толтырылмаған бөліктің түсі. Әдепкі: **display.BLACK**
 
 ```python
 display.linear_bar(50, 50, 5, 0, 10)
@@ -529,8 +524,8 @@ display.linear_bar(50, 50, 5, 0, 10)
 - `min_value (float)` — бос жолаққа сәйкес келетін мән
 - `max_value (float)` — толық жолаққа сәйкес келетін мән
 - `width (int | None)` — радиалды қалыңдық пикселмен. Әдепкі: **2**
-- `color (Display.Color | None)` — толтырылған бөліктің түсі. Әдепкі: **Display.GREEN**
-- `background_color (Display.Color | None)` — толтырылмаған бөліктің түсі. Әдепкі: **Display.WHITE**
+- `color (Display.Color | None)` — толтырылған бөліктің түсі. Әдепкі: **display.GREEN**
+- `background_color (Display.Color | None)` — толтырылмаған бөліктің түсі. Әдепкі: **display.WHITE**
 
 ```python
 display.circular_bar(50, 50, 20, 5, 0, 10)
@@ -674,11 +669,11 @@ display.madctl()
 
 | Атауы | Сипаттамасы |
 |---|---|
-| <span style="color: #000000; font-weight: bold;">Display.BLACK</span>   | таза қара |
-| <span style="color: #0000FF; font-weight: bold;">Display.BLUE</span>    | көк |
-| <span style="color: #FF0000; font-weight: bold;">Display.RED</span>     | қызыл |
-| <span style="color: #00FF00; font-weight: bold;">Display.GREEN</span>   | жасыл |
-| <span style="color: #00FFFF; font-weight: bold;">Display.CYAN</span>    | көгілдір |
-| <span style="color: #FF00FF; font-weight: bold;">Display.MAGENTA</span> | қызғылт |
-| <span style="color: #FFFF00; font-weight: bold;">Display.YELLOW</span>  | сары |
-| <span style="color: #FFFFFF; font-weight: bold;">Display.WHITE</span>   | таза ақ |
+| <span style="color: #000000; font-weight: bold;">display.BLACK</span>   | таза қара |
+| <span style="color: #0000FF; font-weight: bold;">display.BLUE</span>    | көк |
+| <span style="color: #FF0000; font-weight: bold;">display.RED</span>     | қызыл |
+| <span style="color: #00FF00; font-weight: bold;">display.GREEN</span>   | жасыл |
+| <span style="color: #00FFFF; font-weight: bold;">display.CYAN</span>    | көгілдір |
+| <span style="color: #FF00FF; font-weight: bold;">display.MAGENTA</span> | қызғылт |
+| <span style="color: #FFFF00; font-weight: bold;">display.YELLOW</span>  | сары |
+| <span style="color: #FFFFFF; font-weight: bold;">display.WHITE</span>   | таза ақ |
