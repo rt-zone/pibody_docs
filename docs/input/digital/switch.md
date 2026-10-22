@@ -3,6 +3,7 @@ title: Switch
 canonical: switch
 class_name: Switch
 lesson_id: 34
+blockly_lesson_id: 565
 category: input
 subcategory: digital
 interface: digital

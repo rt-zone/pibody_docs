@@ -3,6 +3,7 @@ title: Sound Sensor
 canonical: microphone
 class_name: SoundSensor
 lesson_id: 42
+blockly_lesson_id: 569
 category: input
 interface: analog
 aliases: [Sound]

@@ -3,6 +3,7 @@ title: Push Button
 canonical: push-button
 class_name: Button
 lesson_id: 35
+blockly_lesson_id: 555
 category: input
 subcategory: digital
 interface: digital

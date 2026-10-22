@@ -3,6 +3,7 @@ title: Gyro Accel
 canonical: gyro-accel
 class_name: GyroAccel
 lesson_id: 52
+blockly_lesson_id: 589
 category: input
 subcategory: i2c
 interface: I2C

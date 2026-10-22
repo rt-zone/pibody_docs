@@ -3,6 +3,7 @@ title: LED Control
 canonical: LED
 class_name: LED
 lesson_id: 9
+blockly_lesson_id: 554
 category: output
 interface: GPIO
 ports: [A, B, C, D, E, F]

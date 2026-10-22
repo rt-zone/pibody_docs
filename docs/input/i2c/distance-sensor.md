@@ -3,6 +3,7 @@ title: Distance Sensor
 canonical: distance-sensor
 class_name: DistanceSensor
 lesson_id: 53
+blockly_lesson_id: 590
 category: input
 subcategory: i2c
 interface: I2C

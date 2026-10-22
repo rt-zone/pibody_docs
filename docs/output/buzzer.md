@@ -3,6 +3,7 @@ title: Buzzer Control
 canonical: buzzer
 class_name: Buzzer
 lesson_id: 38
+blockly_lesson_id: 567
 category: output
 interface: PWM
 ports: [A, B, C, D, E, F]

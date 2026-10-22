@@ -3,6 +3,7 @@ title: Joystick
 canonical: joystick
 class_name: Joystick
 lesson_id: 44
+blockly_lesson_id: 570
 category: input
 interface: analog
 ports: [F]
