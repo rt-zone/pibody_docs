@@ -3,6 +3,7 @@ title: Color Sensor
 canonical: color-sensor
 class_name: ColorSensor
 lesson_id: 48
+blockly_lesson_id: 586
 category: input
 subcategory: i2c
 interface: I2C

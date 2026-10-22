@@ -3,6 +3,7 @@ title: LED Tower
 canonical: led-tower
 class_name: LEDTower
 lesson_id: 62
+blockly_lesson_id: 611
 category: output
 interface: GPIO
 ports: [G, H, 8, 9]

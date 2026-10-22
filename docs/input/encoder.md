@@ -3,6 +3,7 @@ title: Encoder
 canonical: encoder
 class_name: Encoder
 lesson_id: 45
+blockly_lesson_id: 572
 category: input
 interface: GPIO
 ports: [A, B, C, D, E, F]

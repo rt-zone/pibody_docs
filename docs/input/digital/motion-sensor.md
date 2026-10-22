@@ -3,6 +3,7 @@ title: Motion Sensor
 canonical: motion-detector
 class_name: MotionSensor
 lesson_id: 37
+blockly_lesson_id: 564
 category: input
 subcategory: digital
 interface: digital

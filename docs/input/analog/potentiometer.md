@@ -3,6 +3,7 @@ title: Potentiometer
 canonical: potentiometer
 class_name: Potentiometer
 lesson_id: 39
+blockly_lesson_id: 568
 category: input
 subcategory: analog
 interface: ADC

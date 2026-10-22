@@ -3,6 +3,7 @@ title: Touch Sensor
 canonical: touch-sensor
 class_name: TouchSensor
 lesson_id: 36
+blockly_lesson_id: 566
 category: input
 subcategory: digital
 interface: digital
