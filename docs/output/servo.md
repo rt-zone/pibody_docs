@@ -3,6 +3,7 @@ title: Servo
 canonical: servo
 class_name: Servo
 lesson_id: 63
+blockly_lesson_id: 612
 category: output
 interface: PWM
 ports: [8, 9, 12]

@@ -3,6 +3,7 @@ title: Light Sensor
 canonical: light-sensor
 class_name: LightSensor
 lesson_id: 40
+blockly_lesson_id: 584
 category: input
 subcategory: analog
 interface: ADC
