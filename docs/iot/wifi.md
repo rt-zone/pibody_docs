@@ -2,6 +2,7 @@
 title: WiFi
 canonical: wifi
 class_name: WiFi
+lesson_id: 82
 category: iot
 interface: UART
 ports: []

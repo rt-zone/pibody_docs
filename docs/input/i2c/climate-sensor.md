@@ -3,6 +3,7 @@ title: Climate Sensor
 canonical: climate-sensor
 class_name: ClimateSensor
 lesson_id: 51
+blockly_lesson_id: 588
 category: input
 subcategory: i2c
 interface: I2C
