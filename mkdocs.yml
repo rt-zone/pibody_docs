@@ -31,6 +31,7 @@ nav:
     - LED Tower: output/led-tower.md
     - Display: output/display.md
     - Servo: output/servo.md
+    - Servo 360: output/servo-360.md
     - PWM: output/pwm.md
   - IOT:
     - WiFi: iot/wifi.md
@@ -102,6 +103,7 @@ plugins:
             LED Tower: LED Tower
             Display: Дисплей
             Servo: Серво
+            Servo 360: Серво 360
             PWM: ИЕМ
             IOT: Заттар интернеті
             WiFi: WiFi
@@ -134,6 +136,7 @@ plugins:
             LED Tower: LED Tower
             Display: Дисплей
             Servo: Серво
+            Servo 360: Серво 360
             PWM: ШИМ
             IOT: Интернет вещей
             WiFi: WiFi
